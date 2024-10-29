@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from katen-template.netlify.app/html/blog-single by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2024 15:02:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Katen - Minimal Blog & Magazine HTML Theme</title>
+	<meta name="description" content="Katen - Minimal Blog & Magazine HTML Theme">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+	<!-- STYLES -->
+	<link rel="stylesheet" href="./blog-css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./blog-css/all.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./blog-css/slick.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./blog-css/simple-line-icons.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./blog-css/style.css" type="text/css" media="all">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
+
+	<link
+		href="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/css/myrental.webflow.26f56b4c2.css"
+		rel="stylesheet"
+		type="text/css"
+  	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="css/index.css">
+
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<style>
+
+	.rounded{
+		height: auto;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	.title{
+		line-height: 30px;
+	}
+
+	* {
+        font-family: "Helvetica";
+      }
+
+		/*--------------------------------------------------------------
+		# Header
+		--------------------------------------------------------------*/
+		/*
+		# Header Bar Text
+		--------------------------------*/
+		.header-bar-text,
+		.header-bar-email {
+			font-size: 12px;
+			color: #afafaf;
+			text-transform: uppercase;
+			letter-spacing: 0.08rem;
+		}
+
+		.header-bar-text {
+			margin-right: 42px;
+		}
+
+		.header-bar-text p {
+			margin: 0;
+		}
+
+		/*
+		# Header Bar Email
+		--------------------------------*/
+		.header-bar-email a {
+			color: #afafaf;
+		}
+
+		/*
+		# Header Bar Social
+		--------------------------------*/
+		.header-bar-social {
+			margin-right: 15px;
+		}
+
+		.header-bar-social ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		.header-bar-social li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 24px;
+			height: 24px;
+			margin: 0 10px;
+			font-size: 14px;
+		}
+
+		.header-bar-social li a {
+			color: #bec4c9;
+			transition: all .35s;
+		}
+
+		.header-bar-social li a:hover {
+			color: #2f2f2f;
+		}
+
+		/*
+		# Header Bar search
+		--------------------------------*/
+		.header-bar-search {
+			margin-top: 30px;
+		}
+
+		.header-bar-search input[type="search"] {
+			width: 100%;
+			padding: 12px 20px;
+			border: 0;
+			border-bottom: 2px solid #d5d5d5;
+			font-size: 12px;
+			font-style: italic;
+			line-height: 1;
+			background: #f5f5f5;
+			color: #afafaf;
+			text-align: center;
+		}
+
+		.header-bar-search input[type="search"]:focus {
+			outline: none;
+		}
+
+		@media screen and (min-width: 768px) {
+			.header-bar-search {
+				width: 300px;
+				margin-top: 0;
+			}
+
+			.header-bar-search input[type="search"] {
+				text-align: right;
+			}
+		}
+
+		/*
+		# Site Branding
+		--------------------------------*/
+		.site-branding {
+			padding: 40px 0;
+		}
+
+		.site-title {
+			font-size: 72px;
+			font-family: 'BeyondTheMountains';
+		}
+
+		.site-title a {
+			color: #2f2f2f;
+			text-decoration: none;
+		}
+
+		.site-description {
+			width: 284px;
+			margin: -5px 0 0;
+			font-size: 10px;
+			letter-spacing: 0.26rem;
+			color: #9d9d9d;
+			text-transform: uppercase;
+			text-align: right;
+		}
+
+		@media screen and (min-width: 576px) {
+			.site-title {
+				font-size: 112px;
+			}
+
+			.site-description {
+				width: 284px;
+				margin: -10px 0 0;
+			}
+		}
+
+		/*
+		Hamburger Menu
+		----------------------------------------*/
+		.hamburger-menu {
+			position: relative;
+			width: 100%;
+			max-width: 24px;
+			height: 22px;
+			margin: 0 auto;
+			transition: .5s ease-in-out;
+			cursor: pointer;
+		}
+
+		.hamburger-menu span {
+			display: block;
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			background: #181818;
+			border-radius: 10px;
+			opacity: 1;
+			left: 0;
+			transition: .25s ease-in-out;
+		}
+
+		.hamburger-menu span:nth-child(1) {
+			top: 2px;
+		}
+
+		.hamburger-menu span:nth-child(2),
+		.hamburger-menu span:nth-child(3) {
+			top: 10px;
+		}
+
+		.hamburger-menu span:nth-child(4) {
+			top: 18px;
+		}
+
+		.hamburger-menu.open span:nth-child(1) {
+			top: 18px;
+			width: 0;
+			left: 50%;
+		}
+
+		.hamburger-menu.open span:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		.hamburger-menu.open span:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+
+		.hamburger-menu.open span:nth-child(4) {
+			top: 18px;
+			width: 0;
+			left: 50%;
+		}
+
+		/*
+		# Main Menu
+		--------------------------------*/
+		.site-navigation {
+			position: absolute;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 22px;
+			overflow: hidden;
+			background: #fff;
+			list-style: none;
+			transition: all .35s;
+		}
+
+		.site-navigation.show {
+			height: auto;
+		}
+
+		.site-navigation ul {
+			padding: 0;
+			margin: 0;
+		}
+
+		.site-navigation ul li {
+			display: block;
+			padding: 10px 0;
+			font-size: 12px;
+			text-align: center;
+			letter-spacing: 0.08rem;
+			text-transform: uppercase;
+		}
+
+		.site-navigation ul li a {
+			display: block;
+			padding: 4px 0;
+			border-bottom: 2px solid transparent;
+			color: #2f2f2f;
+			transition: all 0.35s;
+			text-decoration: none;
+		}
+
+		.site-navigation ul li a:hover,
+		.site-navigation ul li.current-menu-item a {
+			border-color: #2f2f2f;
+		}
+
+		@media screen and (min-width: 768px) {
+			.site-header {
+				margin-top: 12px;
+				margin-bottom: 40px;
+			}
+		}
+
+		@media screen and (min-width: 992px) {
+			.site-navigation ul li {
+				padding: 0 20px;
+			}
+		}
+
+		@media screen and (max-width: 1200px) {
+			#blog-content{
+				padding: 0 4rem;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			#blog-content{
+				padding: 0 2rem;
+			}
+
+			#post-comment, #comment-form{
+				padding: 30px 0;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+<!-- site wrapper -->
+<div class="site-wrapper">
+
+	<div class="main-overlay"></div>
+
+	<!-- Nav -->
+	<div class="navigation">
+        <div class="nav-container">
+          <div
+            data-collapse="medium"
+            data-animation="default"
+            data-duration="400"
+            data-easing="ease"
+            data-easing2="ease"
+            role="banner"
+            class="navbar w-nav"
+          >
+            <div class="notice-box-container">
+              <div class="content-wrapper w-container">
+                <div class="notice-box">
+                  <div class="notice-text-box">
+                    Enter your message here! Coupon Code
+                    <strong>SCARPA10%</strong>
+                  </div>
+                </div>
+                <a href="#" class="close-button w-inline-block"
+                  ><img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e921f61a63a52297570_cerrar.svg"
+                    loading="lazy"
+                    height="10"
+                    width="10"
+                    alt=""
+                    class="close-x"
+                /></a>
+              </div>
+            </div>
+            <div class="nav-content-wrapper w-container">
+              <a
+                href="/"
+                aria-current="page"
+                class="brand w-nav-brand w--current"
+                ><img
+                  src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881ffaee58ad703b6dcd_Logo.png"
+                  alt=""
+                  width="34.5"
+              /></a>
+              <nav role="navigation" class="nav-menu w-nav-menu">
+                <div class="nav-align-center">
+                  <a
+                    href="/about-us.html"
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf19"
+                    class="navlink w-inline-block"
+                    ><div>About Us</div>
+                    <div class="underline-hover mobile-hide"></div></a
+                  ><a
+                    href="/faq.html"
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf1d"
+                    class="navlink w-inline-block"
+                    ><div>Faq</div>
+                    <div class="underline-hover mobile-hide"></div></a
+                  ><a
+                    href="/blog.html"
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf21"
+                    class="navlink w-inline-block"
+                    ><div>Blog</div>
+                    <div class="underline-hover mobile-hide"></div></a
+                  ><a
+                    href="/contact-us.html"
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf25"
+                    class="navlink w-inline-block"
+                    ><div>Contact Us</div>
+                    <div class="underline-hover mobile-hide"></div></a
+                  ><a
+                    href="tel:+44 7448 824220"
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf29"
+                    aria-current="page"
+                    class="navlink phone w-inline-block w--current"
+                    ><div class="nav-phone">+44 7448 824220</div>
+                    <div class="underline-hover mobile-hide"></div></a
+                  ><a
+                    href="mailto:info@melscape.com "
+                    class="w-inline-block nav-mail"
+                    ><ion-icon name="mail-outline"></ion-icon></a
+                  ><a
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e"
+                    href="#"
+                    class="book-button w-button"
+                    >Book Appointment</a
+                  >
+                </div>
+              </nav>
+              <div class="nav-flex">
+                <div class="menu-button w-nav-button">
+                  <div class="icon w-icon-nav-menu"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="newsletter newsletter-container">
+          <div data-ix="move-up-on-load" class="newsletter-box">
+            <div class="newsletter-column left"></div>
+            <div class="newsletter-column modal-right">
+              <div class="center-content center">
+                <div class="title">Newsletter</div>
+                <h4>Receive our latest Rental News</h4>
+              </div>
+              <div class="form-block-newsletter w-form">
+                <form
+                  data-name="Newsletter Pop Up"
+                  name="wf-form-Newsletter-Pop-Up"
+                  id="email-form"
+                  method="get"
+                  class="newsletter-pop"
+                  data-wf-page-id="5fb94d66e5e1d82f06729c39"
+                  data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf3d"
+                >
+                  <input
+                    class="sign-up-input w-input"
+                    maxlength="256"
+                    name="Name"
+                    data-name="Name"
+                    placeholder="Your name"
+                    type="text"
+                    id="field"
+                    required=""
+                  /><input
+                    class="sign-up-input w-input"
+                    maxlength="256"
+                    name="Email"
+                    data-name="Email"
+                    placeholder="Your email"
+                    type="email"
+                    id="field"
+                    required=""
+                  /><input
+                    type="submit"
+                    data-wait="Please wait..."
+                    class="submit-button w-button"
+                    value="Subscribe"
+                  />
+                </form>
+                <div class="success-message w-form-done">
+                  <img
+                    src="https://cdn.prod.website-files.com/5ec27bf8d6ed603740f47152/5ec45a92405dcd465ce0b534_formas-y-simbolos.svg"
+                    width="35"
+                    alt=""
+                  />
+                  <div class="top-margin _15-pixels">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                </div>
+                <div class="error-message w-form-fail">
+                  <div>
+                    Oops! Something went wrong while submitting the form.
+                  </div>
+                </div>
+              </div>
+              <a
+                href="#"
+                data-ix="hide-modal"
+                data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf49"
+                class="close-contact-form w-inline-block"
+                ><img
+                  src="https://cdn.prod.website-files.com/5e46c99de4a0d2042023afcb/5e5582cebcdb732c41a98606_cerrar%20(2).svg"
+                  width="12"
+                  alt=""
+                  class="close-x"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book appointment form -->
+        <div class="side-form">
+          <div class="side-bar">
+            <div class="side-bar-top">
+              <h5 class="h5-small less-margin">Book Appointment</h5>
+              <div class="top-margin _5-pixels">
+                <p class="text-small-gray">
+                  We&#x27;ll answer you in less than 24 hours
+                </p>
+              </div>
+              <div class="top-margin _15-pixels">
+                <div class="rounded">
+                  <img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc2e8467db3ca8816da8ad_Side-Form-Image.jpg"
+                    loading="lazy"
+                    width="285"
+                    alt=""
+                    srcset="
+                      https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc2e8467db3ca8816da8ad_Side-Form-Image-p-500.jpeg 500w,
+                      https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc2e8467db3ca8816da8ad_Side-Form-Image.jpg        570w
+                    "
+                    sizes="100vw"
+                  />
+                  <div class="cover-image side-image"></div>
+                </div>
+              </div>
+              <a
+                data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf56"
+                href="#"
+                class="close-button-form w-inline-block"
+                ><img
+                  src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc274a92d11664dc54a4af_Close.png"
+                  loading="lazy"
+                  width="8.5"
+                  alt=""
+                  class="close"
+              /></a>
+            </div>
+            <div class="contact-box">
+              <div class="book-form w-form">
+                <form
+                  data-name="Side Contact Form"
+                  name="wf-form-Side-Contact-Form"
+                  id="email-form"
+                  method="get"
+                  class="contact-form"
+                  data-wf-page-id="5fb94d66e5e1d82f06729c39"
+                  data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf5a"
+                >
+                  <input
+                    class="w-input"
+                    maxlength="256"
+                    name="Name"
+                    data-name="Name"
+                    placeholder="Your name"
+                    type="text"
+                    id="field"
+                    required=""
+                  /><input
+                    class="w-input"
+                    maxlength="256"
+                    name="Email"
+                    data-name="Email"
+                    placeholder="Your email"
+                    type="email"
+                    id="field"
+                    required=""
+                  /><input
+                    class="w-input"
+                    name="Phone_number"
+                    placeholder="Phone number"
+                    type="tel"
+                    id="field"
+                    required=""
+                  /><input
+                    class="w-input"
+                    name="Arriving-Date"
+                    data-name="property_location"
+                    placeholder="Where is your property located?"
+                    type="text"
+                    id="field"
+                    required=""
+                  />
+                  <input
+                    class="w-input"
+                    name="service_time"
+                    placeholder="When do you need service?"
+                    type="text"
+                    id="field"
+                    required=""
+                  />
+                  <textarea
+                    placeholder="Tell us more..."
+                    maxlength="5000"
+                    data-name="Message"
+                    name="Message"
+                    required=""
+                    id="field"
+                    class="contact-textarea w-input"
+                  ></textarea
+                  ><input
+                    type="submit"
+                    data-wait="Please wait..."
+                    class="side-form-submit w-button"
+                    value="Send"
+                  />
+                </form>
+                <div class="success-message w-form-done">
+                  <img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg"
+                    loading="lazy"
+                    width="35"
+                    alt=""
+                  />
+                  <div class="top-margin _10-pixels">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                </div>
+                <div class="error-message w-form-fail">
+                  <div>
+                    Oops! Something went wrong while submitting the form.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="side-more-options">
+              <div class="top-margin _5-pixels">
+                <div class="flex">
+                  <div class="side-form-icon">
+                    <!-- <img
+                      src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc309ae2843d5ac31673fa_ayuda.svg"
+                      loading="lazy"
+                      width="24"
+                      alt=""
+                    /> -->
+                    <div class="question-icon">
+                      <ion-icon name="help-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="book-arrow">
+                    <a href="/faq.html" class="w-inline-block"
+                      ><h6 class="h6-small">Have questions?</h6>
+                      <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                    <div>
+                      <div class="text-small-gray">
+                        <a href="/faq.html" class="link-green sec-color"
+                          >Find</a
+                        >
+                        answers to commonly asked <br />questions.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="side-more-options less-top-padding">
+              <div class="flex">
+                <div class="side-form-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+                <div class="book-arrow">
+                  <a href="/contact-us.html" class="w-inline-block"
+                    ><h6 class="h6-small">Call us</h6>
+                    <ion-icon name="arrow-forward-outline" ></ion-icon></a>
+                  <div>
+                    <div class="text-small-gray">
+                      <!-- Monday to Friday 9:00am to 5:00pm<br /> -->
+                      <a href="/contact-us.html" class="link-green sec-color"
+                        >+44 7448 824220</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf8c"
+            class="left-side-form"
+          ></div>
+        </div>
+      </div>
+
+	<!-- section main content -->
+	<section class="main-content" style="margin-top: 7rem;">
+		<div style="max-width: 1200px; margin-right: auto; margin-left: auto;" id="blog-content">
+
+			<div class="row gy-4">
+
+				<div class="col-lg-8">
+					<!-- post single -->
+                    <div class="post post-single">
+						<!-- post header -->
+						<div class="post-header">
+							<h1 class="title mt-0 mb-3">3 Easy Ways To Make Your iPhone Faster</h1>
+							<ul class="meta list-inline mb-0">
+								<li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author"/>Katen Doe</a></li>
+								<li class="list-inline-item"><a href="#">Trending</a></li>
+								<li class="list-inline-item">29 March 2021</li>
+							</ul>
+						</div>
+						<!-- featured image -->
+						<div class="featured-image">
+							<img src="posts/featured-lg.jpg" alt="post-title" />
+						</div>
+						<!-- post content -->
+						<div class="post-content clearfix">
+							<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same <a href="#">vocabulary</a>. The languages only differ in their grammar, their pronunciation and their most common words.</p>
+
+							<p>Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it <mark>would be</mark> necessary to have uniform grammar, pronunciation and more common words.</p>
+
+							<figure class="figure">
+								<img src="posts/post-lg-2.jpg" class="figure-img img-fluid rounded" alt="...">
+								<figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+							</figure>
+
+							<p>The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable.</p> 
+							
+							<img src="posts/single-sm-1.jpg" class="rounded alignleft" alt="...">
+							<p>One could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.</p>
+
+							<p>If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing <a href="#">European languages</a>. It will be as simple as Occidental; in fact, it will be Occidental.</p>
+
+							<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+
+							<h4>I should be incapable of drawing a single stroke</h4>
+
+							<ul>
+								<li>How about if I sleep a little bit</li>
+								<li>A collection of textile samples lay spread out</li>
+								<li>His many legs, pitifully thin compared with</li>
+								<li>He lay on his armour-like back</li>
+								<li> Gregor Samsa woke from troubled dreams</li>
+							</ul>
+
+							<p>To an English person, it will seem like simplified <a href="#">English</a>, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p>
+						</div>
+						<!-- post bottom section -->
+						<div class="post-bottom">
+							<div class="row d-flex align-items-center">
+								<div class="col-md-6 col-12 text-center text-md-start">
+									<!-- tags -->
+									<a href="#" class="tag">#Trending</a>
+									<a href="#" class="tag">#Video</a>
+									<a href="#" class="tag">#Featured</a>
+								</div>
+								<div class="col-md-6 col-12">
+									<!-- social icons -->
+									<ul class="social-icons list-unstyled list-inline mb-0 float-md-end">
+										<li class="list-inline-item"><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
+										<li class="list-inline-item"><a href="#"><i class="ri-twitter-fill"></i></a></li>
+										<li class="list-inline-item"><a href="#"><i class="ri-linkedin-box-fill"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+                    </div>
+
+					<div class="spacer" data-height="50"></div>
+
+					<div class="spacer" data-height="50"></div>
+
+					<!-- section header -->
+					<div class="section-header">
+						<h3 class="section-title">Comments (3)</h3>
+						<img src="images/wave.svg" class="wave" alt="wave" />
+					</div>
+					<!-- post comments -->
+					<div class="comments bordered padding-30 rounded" id="post-comment">
+
+						<ul class="comments">
+							<!-- comment item -->
+							<li class="comment rounded">
+								<div class="thumb">
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSA1zygA3rubv-VK0DrVcQ02Po79kJhXo_A&s" alt="John Doe" />
+								</div>
+								<div class="details">
+									<h4 class="name"><a href="#">John Doe</a></h4>
+									<span class="date">Jan 08, 2021 14:41 pm</span>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae odio ut tortor fringilla cursus sed quis odio.</p>
+								</div>
+							</li>
+							<!-- comment item -->
+							<li class="comment rounded">
+								<div class="thumb">
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSA1zygA3rubv-VK0DrVcQ02Po79kJhXo_A&s" alt="John Doe" />
+								</div>
+								<div class="details">
+									<h4 class="name"><a href="#">Anna Doe</a></h4>
+									<span class="date">Jan 08, 2021 14:41 pm</span>
+									<p>Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="spacer" data-height="50"></div>
+
+					<!-- section header -->
+					<div class="">
+						<h3 class="section-title">Leave Comment</h3>
+						<img src="images/wave.svg" class="wave" alt="wave" />
+					</div>
+					<!-- comment form -->
+					<div class="comment-form rounded bordered padding-30" id="comment-form">
+
+						<form id="comment-form" class="comment-form" method="post">
+				
+							<div class="messages"></div>
+							
+							<div class="row">
+
+								<div class="column col-md-12">
+									<!-- Comment textarea -->
+									<div class="form-group">
+										<textarea name="InputComment" id="InputComment" class="form-control" rows="4" placeholder="Your comment here..." required="required"></textarea>
+									</div>
+								</div>
+
+								<div class="column col-md-6">
+									<!-- Email input -->
+									<div class="form-group">
+										<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email address" required="required">
+									</div>
+								</div>
+
+								<div class="column col-md-6">
+									<!-- Name input -->
+									<div class="form-group">
+										<input type="text" class="form-control" name="InputWeb" id="InputWeb" placeholder="Website" required="required">
+									</div>
+								</div>
+	
+								<div class="column col-md-12">
+									<!-- Email input -->
+									<div class="form-group">
+										<input type="text" class="form-control" id="InputName" name="InputName" placeholder="Your name" required="required">
+									</div>
+								</div>
+						
+							</div>
+	
+							<button style="background: #078464 !important;" type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Submit</button><!-- Submit Button -->
+	
+						</form>
+					</div>
+                </div>
+
+				<div class="col-lg-4">
+
+					<!-- sidebar -->
+					<div class="sidebar">
+						<!-- widget about -->
+						<div class="widget rounded">
+							<div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png">
+								<img src="images/logo.svg" alt="logo" class="mb-4" />
+								<p class="mb-4 text-left">Hello, We’re content writer who is fascinated by content fashion, celebrity and lifestyle. We helps clients bring the right content to the right people.</p>
+								<ul class="social-icons list-unstyled list-inline mb-0">
+									<li class="list-inline-item"><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-twitter-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-linkedin-box-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-instagram-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-pinterest-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-medium-fill"></i></a></li>
+									<li class="list-inline-item"><a href="#"><i class="ri-youtube-fill"></i></a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- widget popular posts -->
+						<div class="widget rounded">
+							<div class="widget-header text-left">
+								<h3 class="widget-title">Popular Posts</h3>
+								<img src="images/wave.svg" class="wave" alt="wave" />
+							</div>
+							<div class="widget-content">
+								<!-- post -->
+								<div class="post post-list-sm circle">
+									<div class="thumb circle">
+										<span class="number">1</span>
+										<a href='blog-single.html'>
+											<div class="inner">
+												<img src="posts/tabs-1.jpg" alt="post-title" />
+											</div>
+										</a>
+									</div>
+									<div class="details clearfix">
+										<h6 class="post-title my-0"><a href='blog-single.html'>3 Easy Ways To Make Your iPhone Faster</a></h6>
+										<ul class="meta list-inline mt-1 mb-0">
+											<li class="list-inline-item">29 March 2021</li>
+										</ul>
+									</div>
+								</div>
+								<!-- post -->
+								<div class="post post-list-sm circle">
+									<div class="thumb circle">
+										<span class="number">2</span>
+										<a href='blog-single.html'>
+											<div class="inner">
+												<img src="posts/tabs-2.jpg" alt="post-title" />
+											</div>
+										</a>
+									</div>
+									<div class="details clearfix">
+										<h6 class="post-title my-0"><a href='blog-single.html'>An Incredibly Easy Method That Works For All</a></h6>
+										<ul class="meta list-inline mt-1 mb-0">
+											<li class="list-inline-item">29 March 2021</li>
+										</ul>
+									</div>
+								</div>
+								<!-- post -->
+								<div class="post post-list-sm circle">
+									<div class="thumb circle">
+										<span class="number">3</span>
+										<a href='blog-single.html'>
+											<div class="inner">
+												<img src="posts/tabs-3.jpg" alt="post-title" />
+											</div>
+										</a>
+									</div>
+									<div class="details clearfix">
+										<h6 class="post-title my-0"><a href='blog-single.html'>10 Ways To Immediately Start Selling Furniture</a></h6>
+										<ul class="meta list-inline mt-1 mb-0">
+											<li class="list-inline-item">29 March 2021</li>
+										</ul>
+									</div>
+								</div>
+							</div>		
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<!-- footer -->
+	<a
+	href="#Top"
+	data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031"
+	style="opacity: 0; display: none"
+	class="go-up-button w-inline-block"
+  ></a>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-bg"></div>
+        <div class="content-wrapper w-container">
+          <div class="footer-container">
+            <div class="footer-column">
+              <div class="footer-left">
+                <div>
+                  <a
+                    href="/"
+                    aria-current="page"
+                    class="footer-logo w-inline-block w--current"
+                    ><img
+                      src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881ffaee58ad703b6dcd_Logo.png"
+                      width="34.5"
+                      alt=""
+                  /></a>
+                </div>
+                <div class="top-margin _20-pixels">
+                  <p class="footer-text">
+                    Management services for vacation rental properties
+                  </p>
+                </div>
+                <div class="top-margin _20-pixels">
+                  <div>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="social-icon-mini facebook w-inline-block"
+                    ></a
+                    ><a
+                      href="#"
+                      target="_blank"
+                      class="social-icon-mini twittter w-inline-block"
+                    ></a
+                    ><a
+                      href="#"
+                      target="_blank"
+                      class="social-icon-mini instagram w-inline-block"
+                    ></a
+                    ><a
+                      href="#"
+                      target="_blank"
+                      class="social-icon-mini email w-inline-block"
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-expand">
+              <div class="menu">
+                <div class="footer-title">Menu</div>
+                <div class="top-margin _10-pixels">
+                  <div class="top-margin _20-pixels">
+                    <a
+                      href="/"
+                      data-w-id="35405203-a866-4e52-5fe7-c5591b024b2c"
+                      aria-current="page"
+                      class="menu-link w-inline-block w--current"
+                      ><div>Home</div>
+                      <div class="underline-hover"></div
+                    ></a>
+                  </div>
+                  <div class="top-margin _15-pixels">
+                    <a
+                      href="/about-us.html"
+                      data-w-id="35405203-a866-4e52-5fe7-c5591b024b31"
+                      class="menu-link w-inline-block"
+                      ><div>About us</div>
+                      <div class="underline-hover"></div
+                    ></a>
+                  </div>
+                  <div class="top-margin _15-pixels">
+                    <a
+                      href="/faq.html"
+                      data-w-id="35405203-a866-4e52-5fe7-c5591b024b36"
+                      class="menu-link w-inline-block"
+                      ><div>Faq</div>
+                      <div class="underline-hover"></div
+                    ></a>
+                  </div>
+                  <div class="top-margin _15-pixels">
+                    <a
+                      href="/blog.html"
+                      data-w-id="35405203-a866-4e52-5fe7-c5591b024b3b"
+                      class="menu-link w-inline-block"
+                      ><div>Blog</div>
+                      <div class="underline-hover"></div
+                    ></a>
+                  </div>
+                  <div class="top-margin _15-pixels">
+                    <a
+                      href="/contact-us.html"
+                      data-w-id="35405203-a866-4e52-5fe7-c5591b024b45"
+                      class="menu-link w-inline-block"
+                      ><div>Contact us</div>
+                      <div class="underline-hover"></div
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="menu">
+                <div class="footer-title">Agreement</div>
+                <div class="top-margin _10-pixels">
+                  <div class="top-margin _15-pixels">
+                    <!-- <div class="top-margin _20-pixels">
+                      <a
+                        href="/terms&conditions.html"
+                        data-w-id="35405203-a866-4e52-5fe7-c5591b024b4f"
+                        class="menu-link w-inline-block"
+                        ><div>Terms and Conditions</div>
+                        <div class="underline-hover"></div
+                      ></a>
+                    </div> -->
+                    <div class="top-margin _20-pixels">
+                      <a
+                        href="/privacy-policy.html"
+                        data-w-id="35405203-a866-4e52-5fe7-c5591b024b4f"
+                        class="menu-link w-inline-block"
+                        ><div>Privacy Policy</div>
+                        <div class="underline-hover"></div
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu news">
+                <div class="footer-title">Newsletter</div>
+                <div class="top-margin _20-pixels">
+                  <div class="w-form">
+                    <form
+                      data-name="Footer Newsletter"
+                      name="wf-form-Footer-Newsletter"
+                      id="email-form"
+                      method="get"
+                      class="footer-newsletter"
+                      data-wf-page-id="5fb94d66e5e1d82f06729c39"
+                      data-wf-element-id="35405203-a866-4e52-5fe7-c5591b024b71"
+                    >
+                      <div class="footer-newsletter-bg">
+                        <img
+                          src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c874e97cfeab8_Footer-nl.jpg"
+                          loading="lazy"
+                          width="233.5"
+                          alt=""
+                        />
+                        <div class="footer-newsletter-image"></div>
+                      </div>
+                      <input
+                        class="footer-input w-input"
+                        maxlength="256"
+                        name="Email"
+                        data-name="Email"
+                        placeholder="your@email.com"
+                        type="email"
+                        id="field"
+                        required=""
+                      /><input
+                        type="submit"
+                        data-wait="Please wait..."
+                        class="submit-button-footer w-button"
+                        value="Subscribe!"
+                      />
+                    </form>
+                    <div class="success-message white w-form-done">
+                      <img
+                        src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg"
+                        loading="lazy"
+                        width="35"
+                        alt=""
+                      />
+                      <div class="top-margin _10-pixels">
+                        <div>Thank you! Your submission has been received!</div>
+                      </div>
+                    </div>
+                    <div class="error-message w-form-fail">
+                      <div>
+                        Oops! Something went wrong while submitting the form.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+</div><!-- end site wrapper -->
+
+<!-- search popup area -->
+<div class="search-popup">
+	<!-- close button -->
+	<button type="button" class="btn-close" aria-label="Close"></button>
+	<!-- content -->
+	<div class="search-content">
+		<div class="text-center">
+			<h3 class="mb-4 mt-0">Press ESC to close</h3>
+		</div>
+		<!-- form -->
+		<form class="d-flex search-form">
+			<input class="form-control me-2" type="search" placeholder="Search and press enter ..." aria-label="Search">
+			<button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
+		</form>
+	</div>
+</div>
+
+<!-- canvas menu -->
+<div class="canvas-menu d-flex align-items-end flex-column">
+	<!-- close button -->
+	<button type="button" class="btn-close" aria-label="Close"></button>
+
+	<!-- logo -->
+	<div class="logo">
+		<img src="posts/logo.svg" alt="Katen" />
+	</div>
+
+	<!-- menu -->
+	<nav>
+		<ul class="vertical-menu">
+			<li>
+				<a href='index.html'>Home</a>
+				<ul class="submenu">
+					<li><a href='index.html'>Magazine</a></li>
+					<li><a href='personal.html'>Personal</a></li>
+					<li><a href='personal-alt.html'>Personal Alt</a></li>
+					<li><a href='minimal.html'>Minimal</a></li>
+					<li><a href='classic.html'>Classic</a></li>
+				</ul>
+			</li>
+			<li><a href='category.html'>Lifestyle</a></li>
+			<li><a href='category.html'>Inspiration</a></li>
+			<li>
+				<a href="#">Pages</a>
+				<ul class="submenu">
+					<li><a href='category.html'>Category</a></li>
+					<li><a href='blog-single.html'>Blog Single</a></li>
+					<li><a href='blog-single-alt.html'>Blog Single Alt</a></li>
+					<li><a href='about.html'>About</a></li>
+					<li><a href='contact.html'>Contact</a></li>
+				</ul>
+			</li>
+			<li><a href='contact.html'>Contact</a></li>
+		</ul>
+	</nav>
+
+	<!-- social icons -->
+	<ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
+		<li class="list-inline-item"><a href="#"><i class="social-icon-mini facebook w-inline-block"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+	</ul>
+</div>
+
+<!-- JAVA SCRIPTS -->
+<script src="blog-js/jquery.min.js"></script>
+<script
+src="./js/nav.js"
+type="text/javascript"
+></script>
+<script src="blog-js/popper.min.js"></script>
+<script src="blog-js/bootstrap.min.js"></script>
+<script src="blog-js/slick.min.js"></script>
+<script src="blog-js/jquery.sticky-sidebar.min.js"></script>
+<script src="blog-js/custom.js"></script>
+
+</body>
+
+<!-- Mirrored from katen-template.netlify.app/html/blog-single by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2024 15:03:40 GMT -->
+</html>
