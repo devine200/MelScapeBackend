@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html
+  data-wf-domain="www.melscap.com"
   data-wf-page="5fbc216e891686bd26b3139d"
   data-wf-site="5fb94d66e5e1d8ea7d729c38"
 >
@@ -25,7 +26,6 @@
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
-    
     <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
       !(function (o, c) {
@@ -52,7 +52,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 
     <style>
       .w-webflow-badge {
@@ -70,8 +70,51 @@
         color: var(--first-color-dark);
         font-family: "Cormorant" !important;
       }
+
+      .about-text-wrapper {
+        max-width: 730px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 1.5rem;
+        background-color: #f1ece4;
+      }
+
+      .about-text-wrapper p:first-child {
+        font-size: 18px;
+        margin-bottom: 45px;
+      }
+
+      .about-text-wrapper p {
+        letter-spacing: 0.1px;
+        line-height: 29px;
+      }
+
+      .top-margin {
+        margin-bottom: 2.5rem;
+      }
+
+      a:hover {
+        color: white !important;
+      }
+
+      .post-link:hover {
+        color: #e3a240 !important;
+      }
+
+      @media screen and (max-width: 576px) {
+        .feature {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .mel-diff h2 {
+          font-size: 32px;
+        }
+      }
     </style>
   </head>
+
   <body>
     <div class="preloader">
       <img
@@ -82,7 +125,9 @@
     </div>
     <div style="opacity: 0" class="content">
       <!-- Nav -->
-      {% include 'nav.html' %}
+      {% include "nav.html" %}
+
+      <!-- hero section -->
       <div
         style="
           -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
@@ -114,6 +159,7 @@
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
+
           <div
             style="
               -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
@@ -144,7 +190,7 @@
                 "
                 class="on-load"
               >
-                <div class="text-white">About us</div>
+                <div class="text-white capitalize font-bold mb-3">ABOUT US</div>
               </div>
               <div
                 style="
@@ -179,9 +225,18 @@
                   "
                   class="on-load-3"
                 >
-                  <a href="#Intro" class="button w-button scroll-down"
-                    >Scroll down</a
+                  <a
+                    data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e"
+                    href="#"
+                    class="button w-button"
+                    style="
+                      background-color: var(--third-color-dark);
+                      border: none;
+                    "
+                    >Get Started</a
                   >
+
+                  <!-- <a href="#Intro" class="button w-button scroll-down">Scroll down</a> -->
                 </div>
               </div>
             </div>
@@ -191,465 +246,451 @@
         </div>
       </div>
 
-      <div id="Intro" class="content-section wf-section">
+      <div style="width: 100%; background-color: #f1ece4">
+        <div class="about-text-wrapper">
+          <p style="margin-top: 1rem">
+            Originally focused on the traditional, low-yield long term rental
+            market in Birmingham, we pivoted to the short term rental market and
+            were blown away by the booking volume, yields and income.
+          </p>
+          <p>
+            In 2019 the Melscape concept was born to simplify hosting for others
+            with our full-service property management company powered by
+            proprietary human technology. Travellers’ habits are changing,
+            driving demand for homestyle travel accommodation, so Melscape is on
+            a mission to reshape the short term rental market by providing
+            reliable airbnb property management UK wide for property owners,
+            developers and investors.
+          </p>
+        </div>
+      </div>
+
+      <!-- Melscape difference -->
+      <div class="content-section mel-diff">
         <div class="content-wrapper w-container">
-          <div class="top-blue serv-we-pro"></div>
-          <div class="vertical-grid-block">
+          <div
+            data-w-id="e89c6d9b-4a9c-349c-1dd2-841ee48a3fef"
+            class="features-block"
+          >
+            <div class="mb-20">
+              <div class="top-margin _15-pixels w-full">
+                <h2 class="text-center" style="text-align: center">
+                  How we can help
+                </h2>
+                <div class="underline center"></div>
+              </div>
+            </div>
             <div class="narrow-wrapper">
-              <div class="title-box small">
-                <h3 class="no-top-margin">Explore the services we provide</h3>
+              <div class="flex">
+                <div
+                  data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12"
+                  style="opacity: 1"
+                  class="feature"
+                >
+                  <div>
+                    <div class="heart-icon">
+                      <!-- <ion-icon name="key-outline"></ion-icon> -->
+                      <img src="{% static '/images/icons/piggy-bank-1.svg'%}" alt="" />
+                    </div>
+                    <!-- <h5>Complete Turnkey Solutions</h5> -->
+                    <div class="underline center"></div>
+                  </div>
+                  <div class="feature-text-box">
+                    <p class="text-big">
+                      Want to increase your annual returns? Let Melscape show
+                      you the revenue potential of short term lets.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  data-w-id="f9048cd7-a67b-365b-8593-3875e8368850"
+                  style="opacity: 1"
+                  class="feature"
+                >
+                  <div>
+                    <div class="chat-icon">
+                      <!-- <ion-icon name="chatbubbles-outline"></ion-icon> -->
+                      <img src="{% static '/images/icons/Group-2293.svg'%}" alt="" />
+                    </div>
+                    <!-- <h5>24/7 Full Support</h5> -->
+                    <div class="underline center"></div>
+                  </div>
+                  <div class="feature-text-box">
+                    <p class="text-big">
+                      Need expertise on managing your property on platforms like
+                      Airbnb? The Melscape team are on hand.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12"
+                  style="opacity: 1"
+                  class="feature"
+                >
+                  <div>
+                    <div class="heart-icon">
+                      <!-- <ion-icon name="trash-bin-outline"></ion-icon> -->
+                      <img src="{% static '/images/icons/Repairs@3x-1.svg'%}" alt="" />
+                    </div>
+                    <!-- <h5>In-house maintenance & housekeeping</h5> -->
+                    <div class="underline center"></div>
+                  </div>
+                  <div class="feature-text-box">
+                    <p class="text-big">
+                      Don’t have time for property maintenance and guest
+                      relations? Choose Melscape to take care of the
+                      nitty-gritty details of hosting.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  data-w-id="f9048cd7-a67b-365b-8593-3875e8368850"
+                  style="opacity: 1"
+                  class="feature"
+                >
+                  <div>
+                    <div class="chat-icon">
+                      <!-- <ion-icon name="people-outline"></ion-icon> -->
+                      <img src="{% static '/images/icons/Group-2294.svg'%}" alt="" />
+                    </div>
+                    <!-- <h5>A Unique Human-Tech Hybrid Approach</h5> -->
+                    <div class="underline center"></div>
+                  </div>
+                  <div class="feature-text-box">
+                    <p class="text-big">
+                      Struggling to get your property in front of the right
+                      guests? Use Melscape professional airbnb hosting services
+                      to reach new audiences and vet guests.
+                    </p>
+                  </div>
+                </div>
+                <!-- <div data-w-id="4b582369-35b6-43e1-8ca2-8dea29bf505b" style="opacity: 1" class="feature no-margin">
+                    <div>
+                      <div class="note-icon">
+                        <ion-icon name="receipt-outline"></ion-icon>
+                      </div>
+                      <h5>Elevate Your Rental Experience</h5>
+                      <div class="underline center"></div>
+                    </div>
+                    <div class="feature-text-box">
+                      <p class="text-big">
+                        Our experienced team understands the unique challenges of the rental market and is here to help you navigate them. We’re dedicated to providing the support and innovative solutions you need for a rewarding rental journey.
+                      </p>
+                    </div>
+                  </div> -->
+                <!-- <div data-w-id="f6e08ace-8d05-3b87-fcd8-b8bcae82aec5" style="opacity: 1" class="feature last">
+                    <div>
+                      <div class="earth-icon">
+                        <ion-icon name="card-outline"></ion-icon>
+                      </div>
+                      <h5>Dynamic Pricing </h5>
+                      <div class="underline center"></div>
+                    </div>
+                    <div class="feature-text-box">
+                      <p class="text-big">
+                        We track real-time demand and local events to optimize pricing, ensuring you achieve the highest returns on your property. Our proactive approach keeps you in tune with market trends, so you never miss an opportunity to boost your rental income.
+                      </p>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="Intro" class="content-section wf-section">
+      <div class="content-wrapper w-container">
+        <div class="top-blue serv-we-pro"></div>
+        <div class="vertical-grid-block">
+          <div class="narrow-wrapper">
+            <div class="title-box small">
+              <h3 class="no-top-margin">Explore the services we provide</h3>
+              <div class="underline"></div>
+            </div>
+            <div class="top-margin _20-pixels">
+              <div class="flex-start">
+                <div data-w-id="124da60f-82ff-18a7-e5c0-868f57831f48" style="opacity: 0" class="vertical-item-1">
+                  <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7348b3af7285_8-bg.png"
+                    loading="lazy" alt="" />
+                  <div class="cover-image vertical-grid"></div>
+                </div>
+                <div data-w-id="124da60f-82ff-18a7-e5c0-868f57831f4b" style="opacity: 0" class="vertical-item-2">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824741e7068041254ca_10-bg.png"
+                    loading="lazy" alt="" />
+                  <div class="cover-image vertical-grid-2"></div>
+                </div>
+                <div data-w-id="124da60f-82ff-18a7-e5c0-868f57831f4e" style="opacity: 0" class="vertical-item-3">
+                  <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7348b3af7285_8-bg.png"
+                    loading="lazy" alt="" />
+                  <div class="cover-image vertical-grid-3"></div>
+                </div>
+                <div data-w-id="124da60f-82ff-18a7-e5c0-868f57831f51" style="opacity: 0" class="vertical-item-4">
+                  <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc37aa3bb575872167703e_11-b.png"
+                    loading="lazy" width="181.5" alt="" />
+                  <div class="cover-image vertical-grid-4"></div>
+                </div>
+                <div data-w-id="124da60f-82ff-18a7-e5c0-868f57831f54" style="opacity: 0" class="vertical-item-5">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7300afaf7286_12-bg.png"
+                    loading="lazy" width="181.5" alt="" />
+                  <div class="bottom-absolute">
+                    <a href="#Section" data-w-id="124da60f-82ff-18a7-e5c0-868f57831f57"
+                      class="link-block w-inline-block abt-arr-down"><img
+                        src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc74a103c52d4583ea7f0d_flecha-apuntando-a-la-derecha%20(5).svg"
+                        loading="lazy" width="25" alt="" class="arrow-down" /></a>
+                  </div>
+                  <div class="vertical-relative">
+                    <div class="cover-image vertical-grid-5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+      <!-- Services -->
+      <!-- <div id="Section" data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72682" class="content-section wf-section">
+      <br /><br />
+      <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72683" style="opacity: 0" class="content-wrapper w-container">
+        <div class="flex">
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685" class="flex-column-center right">
+            <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686" style="opacity: 0" class="relative-full-height">
+              <div class="rounded">
+                <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                  loading="lazy" width="596" alt="" />
+                <div class="cover-image _5"></div>
+                <div class="red-corner-block">Thermal Pool</div>
+              </div>
+            </div>
+          </div>
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d" style="opacity: 0" class="flex-column-text left">
+            <div class="max-433-pixels">
+              <div class="title-box">
+                <h3>Property Management</h3>
                 <div class="underline"></div>
               </div>
               <div class="top-margin _20-pixels">
-                <div class="flex-start">
-                  <div
-                    data-w-id="124da60f-82ff-18a7-e5c0-868f57831f48"
-                    style="opacity: 0"
-                    class="vertical-item-1"
-                  >
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7348b3af7285_8-bg.png"
-                      loading="lazy"
-                      alt=""
-                    />
-                    <div class="cover-image vertical-grid"></div>
-                  </div>
-                  <div
-                    data-w-id="124da60f-82ff-18a7-e5c0-868f57831f4b"
-                    style="opacity: 0"
-                    class="vertical-item-2"
-                  >
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824741e7068041254ca_10-bg.png"
-                      loading="lazy"
-                      alt=""
-                    />
-                    <div class="cover-image vertical-grid-2"></div>
-                  </div>
-                  <div
-                    data-w-id="124da60f-82ff-18a7-e5c0-868f57831f4e"
-                    style="opacity: 0"
-                    class="vertical-item-3"
-                  >
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7348b3af7285_8-bg.png"
-                      loading="lazy"
-                      alt=""
-                    />
-                    <div class="cover-image vertical-grid-3"></div>
-                  </div>
-                  <div
-                    data-w-id="124da60f-82ff-18a7-e5c0-868f57831f51"
-                    style="opacity: 0"
-                    class="vertical-item-4"
-                  >
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc37aa3bb575872167703e_11-b.png"
-                      loading="lazy"
-                      width="181.5"
-                      alt=""
-                    />
-                    <div class="cover-image vertical-grid-4"></div>
-                  </div>
-                  <div
-                    data-w-id="124da60f-82ff-18a7-e5c0-868f57831f54"
-                    style="opacity: 0"
-                    class="vertical-item-5"
-                  >
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb98824b74f7300afaf7286_12-bg.png"
-                      loading="lazy"
-                      width="181.5"
-                      alt=""
-                    />
-                    <div class="bottom-absolute">
-                      <a
-                        href="#Section"
-                        data-w-id="124da60f-82ff-18a7-e5c0-868f57831f57"
-                        class="link-block w-inline-block abt-arr-down"
-                        ><img
-                          src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc74a103c52d4583ea7f0d_flecha-apuntando-a-la-derecha%20(5).svg"
-                          loading="lazy"
-                          width="25"
-                          alt=""
-                          class="arrow-down"
-                      /></a>
-                    </div>
-                    <div class="vertical-relative">
-                      <div class="cover-image vertical-grid-5"></div>
-                    </div>
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    At MelScape, we handle every aspect of property
+                    management, from marketing and listing to maintenance and
+                    guest communication.
+                  </p>
+                  <p class="text-big">
+                    We ensure that properties are well-maintained, secure, and
+                    operating efficiently, taking the hassle out of managing
+                    rental properties for owners.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="/images/swirl-left.png" loading="lazy" width="128" alt="" class="left-top-corner swirl" />
+        </div>
+        <br /><br /><br />
+
+
+        <div class="top-margin _35-pixels marg-b">
+          <div class="flex mobile-reverse">
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2" style="opacity: 0" class="flex-column-text right">
+              <div class="max-433-pixels">
+                <div class="title-box">
+                  <h3>Vacation Rentals</h3>
+                  <div class="underline"></div>
+                </div>
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    Catering to travelers seeking unique stays, MelScape
+                    manages vacation homes in popular tourist destinations.
+                  </p>
+                  <p class="text-big">
+                    We provide high-quality amenities, personalized touches,
+                    and 24/7 guest support, creating memorable experiences
+                    that keep guests coming back.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd" style="opacity: 0" class="flex-column-center left">
+              <div class="relative-full-height">
+                <div class="absolute-bottom"></div>
+                <div class="rounded">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                    loading="lazy" width="596" alt="" />
+                  <div class="cover-image _6">
+                    <div class="red-corner-block left">Infinity Pool</div>
                   </div>
                 </div>
               </div>
             </div>
+            <img src="/images/swirl-right.png" loading="lazy" width="168.5" alt="" class="right-bottom-corner" />
           </div>
         </div>
-      </div>
+        <br /><br /><br />
 
-      <!-- Services -->
-      <div
-        id="Section"
-        data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72682"
-        class="content-section wf-section"
-      >
-        <br /><br />
-        <div
-          data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72683"
-          style="opacity: 0"
-          class="content-wrapper w-container"
-        >
-          <!-- Property Management -->
-          <div class="flex">
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685"
-              class="flex-column-center right"
-            >
-              <div
-                data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686"
-                style="opacity: 0"
-                class="relative-full-height"
-              >
-                <div class="rounded">
-                  <img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                    loading="lazy"
-                    width="596"
-                    alt=""
-                  />
-                  <div class="cover-image _5"></div>
-                  <!-- <div class="red-corner-block">Thermal Pool</div> -->
-                </div>
-              </div>
-            </div>
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d"
-              style="opacity: 0"
-              class="flex-column-text left"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Property Management</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      At MelScape, we handle every aspect of property
-                      management, from marketing and listing to maintenance and
-                      guest communication.
-                    </p>
-                    <p class="text-big">
-                      We ensure that properties are well-maintained, secure, and
-                      operating efficiently, taking the hassle out of managing
-                      rental properties for owners.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img
-              src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dcec8cb1f0cb11a4481_Swirl.png"
-              loading="lazy"
-              width="128"
-              alt=""
-              class="left-top-corner swirl"
-            />
-          </div>
-          <br /><br /><br />
 
-          <!-- Vacation Rental -->
-          <div class="top-margin _35-pixels marg-b">
-            <div class="flex mobile-reverse">
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2"
-                style="opacity: 0"
-                class="flex-column-text right"
-              >
-                <div class="max-433-pixels">
-                  <div class="title-box">
-                    <h3>Vacation Rentals</h3>
-                    <div class="underline"></div>
-                  </div>
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      Catering to travelers seeking unique stays, MelScape
-                      manages vacation homes in popular tourist destinations.
-                    </p>
-                    <p class="text-big">
-                      We provide high-quality amenities, personalized touches,
-                      and 24/7 guest support, creating memorable experiences
-                      that keep guests coming back.
-                    </p>
-                  </div>
-                </div>
+        <div class="flex">
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685" class="flex-column-center right">
+            <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686" style="opacity: 0" class="relative-full-height">
+              <div class="rounded">
+                <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                  loading="lazy" width="596" alt="" />
+                <div class="cover-image _5"></div>
+                <div class="red-corner-block">Thermal Pool</div>
               </div>
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd"
-                style="opacity: 0"
-                class="flex-column-center left"
-              >
-                <div class="relative-full-height">
-                  <div class="absolute-bottom"></div>
-                  <div class="rounded">
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                      loading="lazy"
-                      width="596"
-                      alt=""
-                    />
-                    <div class="cover-image _6">
-                      <!-- <div class="red-corner-block left">Infinity Pool</div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img
-                src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dce8255d67c26ea326d_Arrow%20(1).png"
-                loading="lazy"
-                width="168.5"
-                alt=""
-                class="right-bottom-corner"
-              />
             </div>
           </div>
-          <br /><br /><br />
-
-          <!-- Short-Term Rentals -->
-          <div class="flex">
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685"
-              class="flex-column-center right"
-            >
-              <div
-                data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686"
-                style="opacity: 0"
-                class="relative-full-height"
-              >
-                <div class="rounded">
-                  <img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                    loading="lazy"
-                    width="596"
-                    alt=""
-                  />
-                  <div class="cover-image _5"></div>
-                  <!-- <div class="red-corner-block">Thermal Pool</div> -->
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d" style="opacity: 0" class="flex-column-text left">
+            <div class="max-433-pixels">
+              <div class="title-box">
+                <h3>Short-Term Rentals</h3>
+                <div class="underline"></div>
+              </div>
+              <div class="top-margin _20-pixels">
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    At MelScape, we offer fully furnished, short-term rental
+                    solutions for all variety of clients, including business
+                    travelers, families, and digital nomads.
+                  </p>
+                  <p class="text-big">
+                    We manage a wide range of properties, from urban
+                    apartments to suburban homes, ensuring that guests have a
+                    comfortable stay no matter their purpose of travel.
+                  </p>
                 </div>
               </div>
-            </div>
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d"
-              style="opacity: 0"
-              class="flex-column-text left"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Short-Term Rentals</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      At MelScape, we offer fully furnished, short-term rental
-                      solutions for all variety of clients, including business
-                      travelers, families, and digital nomads.
-                    </p>
-                    <p class="text-big">
-                      We manage a wide range of properties, from urban
-                      apartments to suburban homes, ensuring that guests have a
-                      comfortable stay no matter their purpose of travel.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img
-              src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dcec8cb1f0cb11a4481_Swirl.png"
-              loading="lazy"
-              width="128"
-              alt=""
-              class="left-top-corner"
-            />
-          </div>
-          <br /><br /><br />
-
-          <!-- Airbnb Hosting -->
-          <div class="top-margin _35-pixels marg-b">
-            <div class="flex mobile-reverse">
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2"
-                style="opacity: 0"
-                class="flex-column-text right"
-              >
-                <div class="max-433-pixels">
-                  <div class="title-box">
-                    <h3>Airbnb Hosting</h3>
-                    <div class="underline"></div>
-                  </div>
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      As experienced Airbnb hosts, we optimize listings, manage
-                      bookings, handles check-ins and check-outs, maintaining
-                      top ratings on Airbnb.
-                    </p>
-                    <p class="text-big">
-                      We leverage our expertise to enhance visibility, attract
-                      more guests, and maximize occupancy rates.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd"
-                style="opacity: 0"
-                class="flex-column-center left"
-              >
-                <div class="relative-full-height">
-                  <div class="absolute-bottom"></div>
-                  <div class="rounded">
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                      loading="lazy"
-                      width="596"
-                      alt=""
-                    />
-                    <div class="cover-image _6">
-                      <!-- <div class="red-corner-block left">Infinity Pool</div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img
-                src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dce8255d67c26ea326d_Arrow%20(1).png"
-                loading="lazy"
-                width="168.5"
-                alt=""
-                class="right-bottom-corner"
-              />
             </div>
           </div>
-          <br /><br /><br />
-
-          <!-- Property Listings -->
-          <div class="flex">
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685"
-              class="flex-column-center right"
-            >
-              <div
-                data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686"
-                style="opacity: 0"
-                class="relative-full-height"
-              >
-                <div class="rounded">
-                  <img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                    loading="lazy"
-                    width="596"
-                    alt=""
-                  />
-                  <div class="cover-image _5"></div>
-                  <!-- <div class="red-corner-block">Thermal Pool</div> -->
-                </div>
-              </div>
-            </div>
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d"
-              style="opacity: 0"
-              class="flex-column-text left"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Property Listings</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      MelScape offers a multi-channel marketing approach,
-                      listing properties on popular platforms like Airbnb, VRBO,
-                      Booking.com, and our own website.
-                    </p>
-                    <p class="text-big">
-                      We utilize professional photography, engaging
-                      descriptions, and dynamic pricing strategies to ensure
-                      properties stand out and achieve the best rental rates.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img
-              src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dcec8cb1f0cb11a4481_Swirl.png"
-              loading="lazy"
-              width="128"
-              alt=""
-              class="left-top-corner"
-            />
-          </div>
-          <br /><br /><br />
-
-          <!-- Rental Arbitrage -->
-          <div class="top-margin _35-pixels marg-b">
-            <div class="flex mobile-reverse">
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2"
-                style="opacity: 0"
-                class="flex-column-text right"
-              >
-                <div class="max-433-pixels">
-                  <div class="title-box">
-                    <h3>Rental Arbitrage</h3>
-                    <div class="underline"></div>
-                  </div>
-                  <div class="top-margin _25-pixels">
-                    <p class="text-big">
-                      Through rental arbitrage, we lease properties from
-                      landlords and sublets them as short-term rentals,
-                      providing a turnkey solution for property owners who want
-                      to earn rental income without the effort of active
-                      management.
-                    </p>
-                    <p class="text-big">
-                      This allows the company to operate without the need for
-                      property ownership, leveraging market trends to generate
-                      substantial profits.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd"
-                style="opacity: 0"
-                class="flex-column-center left"
-              >
-                <div class="relative-full-height">
-                  <div class="absolute-bottom"></div>
-                  <div class="rounded">
-                    <img
-                      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                      loading="lazy"
-                      width="596"
-                      alt=""
-                    />
-                    <div class="cover-image _6">
-                      <!-- <div class="red-corner-block left">Infinity Pool</div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img
-                src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc7dce8255d67c26ea326d_Arrow%20(1).png"
-                loading="lazy"
-                width="168.5"
-                alt=""
-                class="right-bottom-corner"
-              />
-            </div>
-          </div>
-          <br /><br /><br />
+          <img src="/images/swirl-left.png" loading="lazy" width="128" alt="" class="left-top-corner" />
         </div>
+        <br /><br /><br />
+
+
+        <div class="top-margin _35-pixels marg-b">
+          <div class="flex mobile-reverse">
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2" style="opacity: 0" class="flex-column-text right">
+              <div class="max-433-pixels">
+                <div class="title-box">
+                  <h3>Airbnb Hosting</h3>
+                  <div class="underline"></div>
+                </div>
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    As experienced Airbnb hosts, we optimize listings, manage
+                    bookings, handles check-ins and check-outs, maintaining
+                    top ratings on Airbnb.
+                  </p>
+                  <p class="text-big">
+                    We leverage our expertise to enhance visibility, attract
+                    more guests, and maximize occupancy rates.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd" style="opacity: 0" class="flex-column-center left">
+              <div class="relative-full-height">
+                <div class="absolute-bottom"></div>
+                <div class="rounded">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                    loading="lazy" width="596" alt="" />
+                  <div class="cover-image _6">
+                    <div class="red-corner-block left">Infinity Pool</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="/images/swirl-right.png" loading="lazy" width="168.5" alt="" class="right-bottom-corner" />
+          </div>
+        </div>
+        <br /><br /><br />
+
+
+        <div class="flex">
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685" class="flex-column-center right">
+            <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686" style="opacity: 0" class="relative-full-height">
+              <div class="rounded">
+                <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                  loading="lazy" width="596" alt="" />
+                <div class="cover-image _5"></div>
+                <div class="red-corner-block">Thermal Pool</div>
+              </div>
+            </div>
+          </div>
+          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d" style="opacity: 0" class="flex-column-text left">
+            <div class="max-433-pixels">
+              <div class="title-box">
+                <h3>Property Listings</h3>
+                <div class="underline"></div>
+              </div>
+              <div class="top-margin _20-pixels">
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    MelScape offers a multi-channel marketing approach,
+                    listing properties on popular platforms like Airbnb, VRBO,
+                    Booking.com, and our own website.
+                  </p>
+                  <p class="text-big">
+                    We utilize professional photography, engaging
+                    descriptions, and dynamic pricing strategies to ensure
+                    properties stand out and achieve the best rental rates.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="/images/swirl-left.png" loading="lazy" width="128" alt="" class="left-top-corner" />
+        </div>
+        <br /><br /><br />
+
+
+        <div class="top-margin _35-pixels marg-b">
+          <div class="flex mobile-reverse">
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2" style="opacity: 0" class="flex-column-text right">
+              <div class="max-433-pixels">
+                <div class="title-box">
+                  <h3>Rental Arbitrage</h3>
+                  <div class="underline"></div>
+                </div>
+                <div class="top-margin _25-pixels">
+                  <p class="text-big">
+                    Through rental arbitrage, we lease properties from
+                    landlords and sublets them as short-term rentals,
+                    providing a turnkey solution for property owners who want
+                    to earn rental income without the effort of active
+                    management.
+                  </p>
+                  <p class="text-big">
+                    This allows the company to operate without the need for
+                    property ownership, leveraging market trends to generate
+                    substantial profits.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd" style="opacity: 0" class="flex-column-center left">
+              <div class="relative-full-height">
+                <div class="absolute-bottom"></div>
+                <div class="rounded">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
+                    loading="lazy" width="596" alt="" />
+                  <div class="cover-image _6">
+                    <div class="red-corner-block left">Infinity Pool</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="/images/swirl-right.png" loading="lazy" width="168.5" alt="" class="right-bottom-corner" />
+          </div>
+        </div>
+        <br /><br /><br />
       </div>
+    </div> -->
 
       <!-- Newsletter -->
       <div class="content-section no-top-padding wf-section">
@@ -664,11 +705,11 @@
                 <div
                   data-w-id="b7bc751f-6fd0-f5da-454f-8065323db0c3"
                   style="opacity: 0"
-                  class="newsletter-form-container "
+                  class="newsletter-form-container"
                 >
                   <div class="div-block">
                     <div class="title-box medium">
-                      <h3>Newsletter Sign Up</h3>
+                      <h3>Calculate Potential Earnings</h3>
                       <div class="underline"></div>
                       <div class="top-margin _15-pixels">
                         <!-- <p>Stay updated</p> -->
@@ -689,8 +730,17 @@
                           data-name="Name"
                           placeholder="Name"
                           id="field"
-                          required=""
-                        /><input
+                        />
+                        <input
+                          type="text"
+                          class="form-field w-input"
+                          maxlength="256"
+                          name="location"
+                          data-name="Location"
+                          placeholder="Location"
+                          id="field"
+                        />
+                        <input
                           type="email"
                           class="form-field w-input"
                           maxlength="256"
@@ -698,9 +748,10 @@
                           data-name="Email"
                           placeholder="Email"
                           id="field"
-                          required=""
-                        /><input
+                        />
+                        <input
                           type="submit"
+                          data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2d"
                           value="Submit"
                           data-wait="Please wait..."
                           class="newsletter-button w-button"
@@ -730,7 +781,7 @@
                 </div>
                 <div class="guy-column">
                   <img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc80a0f7e9ed5b6c1b9f4e_Guy.png"
+                    src="{% static '/images/news-man.png'%}"
                     loading="lazy"
                     width="335.5"
                     style="opacity: 0"
@@ -745,37 +796,24 @@
       </div>
 
       <!-- IMage -->
-      <div class="content-section wf-section">
-        <div class="content-wrapper w-container">
-          <div class="heading-box large">
-            <h2>Discover our property where you’ll find amazing amenities</h2>
-          </div>
-          <div
-            data-w-id="c74b361c-1dc9-fee3-3964-805912864810"
-            style="opacity: 0"
-            class="image-map"
-          >
-            <img
-              src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg.png"
-              loading="lazy"
-              width="1144"
-              sizes="(max-width: 479px) 100vw, (max-width: 767px) 93vw, (max-width: 991px) 95vw, (max-width: 1279px) 96vw, 1144px"
-              srcset="
+      <!-- <div class="content-section wf-section">
+      <div class="content-wrapper w-container">
+        <div class="heading-box large">
+          <h2>Discover our property where you’ll find amazing amenities</h2>
+        </div>
+        <div data-w-id="c74b361c-1dc9-fee3-3964-805912864810" style="opacity: 0" class="image-map">
+          <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg.png"
+            loading="lazy" width="1144"
+            sizes="(max-width: 479px) 100vw, (max-width: 767px) 93vw, (max-width: 991px) 95vw, (max-width: 1279px) 96vw, 1144px"
+            srcset="
                 https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg-p-500.png   500w,
                 https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg-p-800.png   800w,
                 https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg-p-1080.png 1080w,
                 https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd57bf877e914bdc82f870_Image-bg.png        2288w
-              "
-              alt=""
-            />
-            <div class="cover-image room">
-              <div
-                data-w-id="48121258-ea0a-f2f9-d1d1-df98bc33c430"
-                style="opacity: 0"
-                class="bubble-container-3"
-              >
-                <div
-                  style="
+              " alt="" />
+          <div class="cover-image room">
+            <div data-w-id="48121258-ea0a-f2f9-d1d1-df98bc33c430" style="opacity: 0" class="bubble-container-3">
+              <div style="
                     -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
@@ -785,33 +823,23 @@
                     transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     opacity: 0;
-                  "
-                  class="tooltip-3"
-                >
-                  <div class="triangle"></div>
-                  <div class="text-bubble">
-                    Space are so well designed and delightful that you’ll return
-                    very soon
-                  </div>
+                  " class="tooltip-3">
+                <div class="triangle"></div>
+                <div class="text-bubble">
+                  Space are so well designed and delightful that you’ll return
+                  very soon
                 </div>
-                <div class="center-content">
-                  <div class="dot-container">
-                    <div
-                      data-w-id="5db34ea4-0249-4cd4-1039-2cac49568202"
-                      class="dot"
-                    >
-                      <div class="central-dot"></div>
-                    </div>
+              </div>
+              <div class="center-content">
+                <div class="dot-container">
+                  <div data-w-id="5db34ea4-0249-4cd4-1039-2cac49568202" class="dot">
+                    <div class="central-dot"></div>
                   </div>
                 </div>
               </div>
-              <div
-                data-w-id="ebe1be44-13c0-df3b-50b9-8f99151c26b1"
-                style="opacity: 0"
-                class="bubble-container"
-              >
-                <div
-                  style="
+            </div>
+            <div data-w-id="ebe1be44-13c0-df3b-50b9-8f99151c26b1" style="opacity: 0" class="bubble-container">
+              <div style="
                     -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
@@ -821,32 +849,22 @@
                     transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     opacity: 0;
-                  "
-                  class="tooltip"
-                >
-                  <div class="triangle"></div>
-                  <div class="text-bubble">
-                    Enjoy a comfortable living room with hidden wall tv
-                  </div>
+                  " class="tooltip">
+                <div class="triangle"></div>
+                <div class="text-bubble">
+                  Enjoy a comfortable living room with hidden wall tv
                 </div>
-                <div class="center-content">
-                  <div class="dot-container">
-                    <div
-                      data-w-id="b05e3ad8-149b-8d4c-b058-3e9e8e877dfe"
-                      class="dot"
-                    >
-                      <div class="central-dot"></div>
-                    </div>
+              </div>
+              <div class="center-content">
+                <div class="dot-container">
+                  <div data-w-id="b05e3ad8-149b-8d4c-b058-3e9e8e877dfe" class="dot">
+                    <div class="central-dot"></div>
                   </div>
                 </div>
               </div>
-              <div
-                data-w-id="ef64002c-e137-ee21-c2ca-7a4ff4b634eb"
-                style="opacity: 0"
-                class="bubble-container-2"
-              >
-                <div
-                  style="
+            </div>
+            <div data-w-id="ef64002c-e137-ee21-c2ca-7a4ff4b634eb" style="opacity: 0" class="bubble-container-2">
+              <div style="
                     -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
@@ -856,22 +874,16 @@
                     transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
                       rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                     opacity: 0;
-                  "
-                  class="tooltip-2"
-                >
-                  <div class="triangle"></div>
-                  <div class="text-bubble">
-                    Prepare delicious meals and our well equipped kitchen
-                  </div>
+                  " class="tooltip-2">
+                <div class="triangle"></div>
+                <div class="text-bubble">
+                  Prepare delicious meals and our well equipped kitchen
                 </div>
-                <div class="center-content">
-                  <div class="dot-container">
-                    <div
-                      data-w-id="2273b0a1-5714-e2b5-cc5d-69873cbe0dde"
-                      class="dot"
-                    >
-                      <div class="central-dot"></div>
-                    </div>
+              </div>
+              <div class="center-content">
+                <div class="dot-container">
+                  <div data-w-id="2273b0a1-5714-e2b5-cc5d-69873cbe0dde" class="dot">
+                    <div class="central-dot"></div>
                   </div>
                 </div>
               </div>
@@ -879,31 +891,162 @@
           </div>
         </div>
       </div>
+    </div> -->
 
-      <div class="content-section wf-section">
+      <!-- Best features -->
+      <!-- <div class="content-section wf-section">
         <div class="content-wrapper w-container">
           <div class="heading-box large">
-            <div class="photo-icon">
-              <ion-icon name="image-outline"></ion-icon>
-            </div>
-            <h2>Find plenty of images of our rental property</h2>
+            <img
+              src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3344f29172cbd74e6c78_maleta.svg"
+              loading="lazy"
+              width="35"
+              alt=""
+            />
+            <h2>Only the best features for our guests</h2>
+            <div class="underline center"></div>
           </div>
-          <div class="narrow-wrapper">
+          <div class="narrow">
             <div class="flex">
-              <div class="gallery-column">
-                <a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296354"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e5593d"
+                style="opacity: 0"
+                class="perk"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc809eef0f2fadcdf17b46_Icon.png"
                     loading="lazy"
-                    width="312.5"
+                    width="42.5"
                     alt=""
                   />
-                  <div class="hover-image gallery"></div>
-                  <script type="application/json" class="w-json">
+                </div>
+                <div class="expand">
+                  <div class="number">10x</div>
+                  <h6 class="h6-small-blue">Maximized Revenue</h6>
+                  <p>
+                    Our company ensures that properties achieve maximum
+                    profitability.
+                  </p>
+                </div>
+              </div>
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e55947"
+                style="opacity: 0"
+                class="perk _2"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc80a0256a7567736ede20_Icon-2.png"
+                    loading="lazy"
+                    width="42.5"
+                    alt=""
+                  />
+                </div>
+                <div class="expand">
+                  <div class="number">120%</div>
+                  <h6 class="h6-small-blue">Secure payment</h6>
+                  <p>With a 12 month plan we can reach this numbers.</p>
+                </div>
+              </div>
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e55951"
+                style="opacity: 0"
+                class="perk _3"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc80a1d95bfab9f9ce0100_Icon-3.png"
+                    loading="lazy"
+                    width="42.5"
+                    alt=""
+                  />
+                </div>
+                <div class="expand">
+                  <div class="number">100k</div>
+                  <h6 class="h6-small-blue">Safe location</h6>
+                  <p>With a 12 month plan we can reach this numbers.</p>
+                </div>
+              </div>
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e5595b"
+                style="opacity: 0"
+                class="perk"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc80a0c8cb1f1ab81a4c05_Icon-4.png"
+                    loading="lazy"
+                    width="42.5"
+                    alt=""
+                  />
+                </div>
+                <div class="expand">
+                  <div class="number">20x</div>
+                  <h6 class="h6-small-blue">Easy to access</h6>
+                  <p>With a 12 month plan we can reach this numbers.</p>
+                </div>
+              </div>
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e55965"
+                style="opacity: 0"
+                class="perk _5"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc809a081ef5885f5bd46e_Icon-5.png"
+                    loading="lazy"
+                    width="42.5"
+                    alt=""
+                  />
+                </div>
+                <div class="expand">
+                  <div class="number">100%</div>
+                  <h6 class="h6-small-blue">Keyless system</h6>
+                  <p>With a 12 month plan we can reach this numbers.</p>
+                </div>
+              </div>
+              <div
+                data-w-id="836a0eef-0736-f2e8-b363-c14fc4e5596f"
+                style="opacity: 0"
+                class="perk _6"
+              >
+                <div class="perk-icon">
+                  <img
+                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc80a0ddd21b145aff89a9_Icon-6.png"
+                    loading="lazy"
+                    width="42.5"
+                    alt=""
+                  />
+                </div>
+                <div class="expand">
+                  <div class="number">70x</div>
+                  <h6 class="h6-small-blue">MyRental approved</h6>
+                  <p>With a 12 month plan we can reach this numbers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="content-section wf-section">
+      <div class="content-wrapper w-container">
+        <div class="heading-box large">
+          <div class="photo-icon">
+            <ion-icon name="image-outline"></ion-icon>
+          </div>
+          <h2>Find plenty of images of our rental property</h2>
+        </div>
+        <div class="narrow-wrapper">
+          <div class="flex">
+            <div class="gallery-column">
+              <a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296354" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -919,20 +1062,13 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296357"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-2"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296357" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-2"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -948,20 +1084,13 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d529635a"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-3"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d529635a" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-3"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -977,23 +1106,16 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                >
-              </div>
-              <div class="gallery-column-2">
-                <a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d529635e"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-4"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a>
+            </div>
+            <div class="gallery-column-2">
+              <a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d529635e" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-4"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1010,20 +1132,13 @@
                       ],
                       "group": ""
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296361"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-5"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296361" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-5"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1039,20 +1154,13 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296364"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-6"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296364" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-6"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1068,23 +1176,16 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                >
-              </div>
-              <div class="gallery-column-3">
-                <a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296368"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-7"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a>
+            </div>
+            <div class="gallery-column-3">
+              <a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d5296368" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-7"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1100,20 +1201,13 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d529636b"
-                  style="opacity: 0"
-                  class="gallery-item w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-8"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d529636b" style="opacity: 0"
+                class="gallery-item w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d3f8f5ec30ab824508a_Gallery-2.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-8"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1130,20 +1224,13 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                ><a
-                  href="#"
-                  data-w-id="b68e7520-6e1a-204d-f788-2ea1d529636e"
-                  style="opacity: 0"
-                  class="gallery-item last w-inline-block w-lightbox"
-                  ><img
-                    src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
-                    loading="lazy"
-                    width="312.5"
-                    alt=""
-                  />
-                  <div class="hover-image gallery-9"></div>
-                  <script type="application/json" class="w-json">
+                  </script>
+              </a><a href="#" data-w-id="b68e7520-6e1a-204d-f788-2ea1d529636e" style="opacity: 0"
+                class="gallery-item last w-inline-block w-lightbox"><img
+                  src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd3d409a4eb060b3ef91a3_Gallery-1.png"
+                  loading="lazy" width="312.5" alt="" />
+                <div class="hover-image gallery-9"></div>
+                <script type="application/json" class="w-json">
                     {
                       "items": [
                         {
@@ -1159,17 +1246,17 @@
                       ],
                       "group": "Gallery"
                     }
-                  </script></a
-                >
-              </div>
+                  </script>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div> -->
 
       <!-- Book appointement -->
       <div class="content-section wf-section">
-        <div class="content-wrapper w-container ">
+        <div class="content-wrapper w-container">
           <div
             data-w-id="b9d427fc-d7c2-18e5-d179-1c9c152ebfbe"
             style="opacity: 0"
@@ -1179,7 +1266,7 @@
               <h2 class="text-white">Book an appointment with us</h2>
               <div class="underline center"></div>
             </div>
-            <div class="book-form w-form ">
+            <div class="book-form w-form">
               <form
                 method="get"
                 name="wf-form-Side-Contact-Form"
@@ -1275,6 +1362,150 @@
           </div>
         </div>
       </div>
+
+      <!-- BLOG -->
+      <div
+        data-w-id="0c5167c3-786b-8b64-8c4e-efabbb5523ea"
+        class="content-section"
+      >
+        <div class="content-wrapper w-container">
+          <div class="title-box">
+            <h3>Stay updated</h3>
+            <div class="underline"></div>
+          </div>
+          <div
+            data-w-id="48095ca5-72d1-8784-59cc-a2ce6c8f1299"
+            style="opacity: 1"
+            class="top-margin _30-pixels w-dyn-list"
+          >
+            <div role="list" class="flex center-mobile w-dyn-items">
+              <div role="listitem" class="preview-item w-dyn-item">
+                <a
+                  data-w-id="de0cae89-0694-080f-c115-51bdb555b226"
+                  href="/blog.html"
+                  class="post-image-preview w-inline-block"
+                  ><img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png"
+                    loading="lazy"
+                    alt=""
+                    width="361.5"
+                  />
+                  <div
+                    style="
+                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc15136d10099952d5b764_kam-idris-Ot2iTXgC6fY-unsplash%20(1).jpg');
+                    "
+                    class="hover-image"
+                  ></div>
+                </a>
+                <div class="top-margin _15-pixels">
+                  <div class="left-padding _10-pixels">
+                    <a
+                      style="background-color: #e3a240; color: white"
+                      href="/category/rentals"
+                      class="category-lik"
+                      >Rentals</a
+                    >
+                    <div>
+                      <a href="/blog.html" class="post-link"
+                        >We Are Launching MyRental CMS Webflow Template This
+                        Week!</a
+                      >
+                    </div>
+                    <div class="top-margin _10-pixels">
+                      <p>
+                        My Rental is a beautiful designed Business Webflow CMS
+                        Template.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="preview-item w-dyn-item">
+                <a
+                  data-w-id="de0cae89-0694-080f-c115-51bdb555b226"
+                  href="/blog.html"
+                  class="post-image-preview w-inline-block"
+                  ><img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png"
+                    loading="lazy"
+                    alt=""
+                    width="361.5"
+                  />
+                  <div
+                    style="
+                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc15218078bd20a474e4e4_kam-idris-_HqHX3LBN18-unsplash.jpg');
+                    "
+                    class="hover-image"
+                  ></div>
+                </a>
+                <div class="top-margin _15-pixels">
+                  <div class="left-padding _10-pixels">
+                    <a
+                      style="background-color: #e3a240; color: white"
+                      href="/category/holidays"
+                      class="category-lik"
+                      >Holidays</a
+                    >
+                    <div>
+                      <a href="/blog.html" class="post-link"
+                        >5 Things To See When You Buy Your First Rental
+                        Property</a
+                      >
+                    </div>
+                    <div class="top-margin _10-pixels">
+                      <p>
+                        My Rental is a beautiful designed Business Webflow CMS
+                        Template.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="preview-item w-dyn-item">
+                <a
+                  data-w-id="de0cae89-0694-080f-c115-51bdb555b226"
+                  href="/blog.html"
+                  class="post-image-preview w-inline-block"
+                  ><img
+                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png"
+                    loading="lazy"
+                    alt=""
+                    width="361.5"
+                  />
+                  <div
+                    style="
+                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc1189b84e9e0fd539d884_kam-idris-kyt0PkBSCNQ-unsplash%20(1).jpg');
+                    "
+                    class="hover-image"
+                  ></div>
+                </a>
+                <div class="top-margin _15-pixels">
+                  <div class="left-padding _10-pixels">
+                    <a
+                      style="background-color: #e3a240; color: white"
+                      href="/category/airb-b"
+                      class="category-lik"
+                      >Airb&amp;b</a
+                    >
+                    <div>
+                      <a href="/blog.html" class="post-link"
+                        >Rental Friendly Practices For Your Guests</a
+                      >
+                    </div>
+                    <div class="top-margin _10-pixels">
+                      <p>
+                        My Rental is a beautiful designed Business Webflow CMS
+                        Template.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <a
         href="#Top"
         data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031"
@@ -1300,7 +1531,8 @@
                 srcset="
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
+                "
+              />
               <div class="cover-image insta-1"></div>
               <div class="hover-overlay">
                 <img
@@ -1309,7 +1541,8 @@
                   data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec5b"
                   alt=""
                   class="hover-icon"
-                /></div></a
+                />
+              </div> </a
             ><a
               data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec5c"
               href="#"
@@ -1322,7 +1555,8 @@
                 srcset="
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
+                "
+              />
               <div class="cover-image insta-2"></div>
               <div class="hover-overlay">
                 <img
@@ -1331,7 +1565,8 @@
                   data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec60"
                   alt=""
                   class="hover-icon"
-                /></div></a
+                />
+              </div> </a
             ><a
               data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec61"
               href="#"
@@ -1344,7 +1579,8 @@
                 srcset="
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
+                "
+              />
               <div class="cover-image insta-3"></div>
               <div class="hover-overlay">
                 <img
@@ -1353,7 +1589,8 @@
                   data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec65"
                   alt=""
                   class="hover-icon"
-                /></div></a
+                />
+              </div> </a
             ><a
               data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec66"
               href="#"
@@ -1366,7 +1603,8 @@
                 srcset="
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
                   https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
+                "
+              />
               <div class="cover-image insta-4"></div>
               <div class="hover-overlay">
                 <img
@@ -1375,8 +1613,9 @@
                   data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec6a"
                   alt=""
                   class="hover-icon"
-                /></div
-            ></a>
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -1398,9 +1637,6 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/js/webflow.3de16972c.js"
-      type="text/javascript"
-    ></script>
+    <script src="{% static '/js/main.js'%}"></script>
   </body>
 </html>
