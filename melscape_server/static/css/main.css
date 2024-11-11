@@ -3078,14 +3078,15 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.newsletter-column.modal-right {
+.newsletter-column.modal-right,
+.newsletter-column.modal-center {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3115,6 +3116,10 @@ figcaption {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.newsletter-column.modal-center {
+  text-align: center;
 }
 
 .navigation {

@@ -10,34 +10,32 @@
 } */
 
 :root {
-    --first-color-black: #100010;
-    --first-color-dark: #fdaf43;
-    --first-color-darker: #c3842c;
-    --first-color-light: #f2d0a2;
-    --first-color-fade: #f1ece4;
-    --second-color: #8ec545;
-    --third-color-light: #7d5bdc;
-    --third-color-dark: #5a419c;
-    --third-color-darker: #36285c;
+  --first-color-black: #100010;
+  --first-color-dark: #fdaf43;
+  --first-color-darker: #c3842c;
+  --first-color-light: #f2d0a2;
+  --first-color-fade: #f1ece4;
+  --second-color: #8ec545;
+  --second-color-dark: #547528;
+  --third-color-light: #7d5bdc;
+  --third-color-dark: #5a419c;
+  --third-color-darker: #36285c;
 }
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lexend:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lexend:wght@100..900&display=swap");
 
 .her0-1 {
-    color: black;
+  color: black;
 }
 
 p,
 li {
-    color: var(--first-color-black);
+  color: var(--first-color-black);
 }
 
-
-.menu-button.w--open {
-    background-color: var(--third-color-dark);
+.menu-button.w--open,
+.privacy-hero {
+  background-color: var(--third-color-dark);
 }
 
 h1,
@@ -48,74 +46,83 @@ h5,
 h6,
 b,
 .question {
-    color: var(--first-color-dark);
-    font-family: 'Cormorant' !important;
+  color: var(--first-color-dark);
+  font-family: "Cormorant" !important;
 }
 
 a,
 p {
-    font-family: 'Helvetica' !important;
+  font-family: "Helvetica" !important;
 }
 
 .intro_ p {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
+}
+
+.modal-text {
+  margin: 0 auto;
+}
+
+.modal-text h4 {
+  margin-top: 5px;
+  color: black;
+  font-size: 40px;
 }
 
 .intro-link {
-    width: 50%;
+  width: 50%;
 }
 
 .home-hero {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .home-info h3 {
-    font-size: 30px;
-    font-weight: 800;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 .mel-diff h2 {
-    font-size: 55px;
-    font-weight: bold;
+  font-size: 55px;
+  font-weight: bold;
 }
 
 .mel-diff h5 {
-    font-size: 30px;
-    font-weight: 600;
+  font-size: 30px;
+  font-weight: 600;
 }
 
-
 .steps-num {
-    font-size: 21px;
-    color: white;
+  font-size: 21px;
+  color: white;
 }
 
 .text-big {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 .faq-content li {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .privacy-det {
-    line-height: 2;
-    padding: 0px 50px;
+  line-height: 2;
+  padding: 0px 50px;
 }
 
 .privacy-det p {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .hero-text {
-    color: white;
-    width: 80%;
-    margin: 20px auto;
-    font-size: 18px;
+  color: white;
+  width: 80%;
+  margin: 20px auto;
+  font-size: 18px;
 }
 
 .nav-phone,
@@ -124,25 +131,25 @@ p {
 .bullet-point,
 .navlink:hover,
 .contact-link {
-    color: var(--second-color);
+  color: var(--second-color);
 }
 
 .menu-link.w--current {
-    color: var(--second-color);
+  color: var(--second-color);
 }
 
 .navlink.w--current {
-    color: var(--second-color);
+  color: var(--second-color);
 }
 
 .nav-mail {
-    color: var(--second-color);
-    font-size: 25px;
-    margin: 5px 40px 0px 15px;
+  color: var(--second-color);
+  font-size: 25px;
+  margin: 5px 40px 0px 15px;
 }
 
 .nav-mail:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .book-button:hover,
@@ -160,69 +167,68 @@ p {
 .w-slider-arrow-left,
 .abt-arr-down,
 .submit-button-form:hover {
-    background-color: var(--second-color);
+  background-color: var(--second-color);
+}
+
+.book-button:hover {
+  background-color: var(--second-color-dark);
 }
 
 .scroll-down,
 .book-ap-h,
 .how-works {
-    font-size: 15px;
-    width: fit-content;
-    padding: 15px 50px;
+  font-size: 15px;
+  width: fit-content;
+  padding: 15px 50px;
 }
 
 .how-works {
-    background-color: var(--first-color-dark);
-    border-color: var(--first-color-dark);
+  background-color: var(--first-color-dark);
+  border-color: var(--first-color-dark);
 }
 
 .how-works:hover {
-    background-color: var(--first-color-darker);
-    color: white;
-    border-color: var(--first-color-darker);
+  background-color: var(--first-color-darker);
+  color: white;
+  border-color: var(--first-color-darker);
 }
 
 .scroll-down {
-    border: 1px solid var(--third-color-darker);
+  border: 1px solid var(--third-color-darker);
 }
 
 .book-ap-h {
-    background-color: var(--third-color-dark);
-    border: 1px solid var(--third-color-dark);
+  background-color: var(--third-color-dark);
+  border: 1px solid var(--third-color-dark);
 }
 
 .book-ap-h:hover {
-    background-color: var(--third-color-darker);
-    color: white;
+  background-color: var(--third-color-darker);
+  color: white;
 }
 
 .scroll-down {
-    background-color: var(--third-color-darker);
+  background-color: var(--third-color-darker);
 }
 
 .scroll-down:hover {
-    color: white;
-    background-color: var(--third-color-dark);
+  color: white;
+  background-color: var(--third-color-dark);
 }
 
 .book-button,
 .submit-button-footer,
 .submit-button-form,
 .side-form-submit {
-    background-color: var(--second-color);
+  background-color: var(--second-color);
 }
 
 .navbar {
-    background-color: var(--third-color-dark);
+  background-color: var(--third-color-dark);
 }
 
 .footer-bg {
-    background-color: var(--third-color-light);
-}
-
-.hero-left,
-.privacy-hero {
-    background-color: var(--first-color-dark);
+  background-color: var(--third-color-light);
 }
 
 .home-icon ion-icon,
@@ -232,18 +238,18 @@ p {
 .note-icon ion-icon,
 .photo-icon ion-icon,
 .locate-icon ion-icon {
-    font-size: 45px;
-    color: var(--second-color);
+  font-size: 45px;
+  color: var(--second-color);
 }
 
 .shield-icon ion-icon,
 .side-more-options ion-icon {
-    font-size: 30px;
-    color: var(--second-color);
+  font-size: 30px;
+  color: var(--second-color);
 }
 
 .book-arrow ion-icon {
-    margin-bottom: -7px;
+  margin-bottom: -7px;
 }
 
 .features-block,
@@ -253,13 +259,13 @@ p {
 .cont-body,
 .shade-pur,
 .preloader {
-    background-color: var(--first-color-fade);
+  background-color: var(--first-color-fade);
 }
 
 .cont-body input,
 .cont-body select,
 .cont-body textarea {
-    border-color: #542201;
+  border-color: #542201;
 }
 
 .cont-body input:hover,
@@ -268,51 +274,52 @@ p {
 .cont-body select:focus,
 .cont-body textarea:hover,
 .cont-body textarea:focus {
-    border-color: var(--third-color-dark);
+  border-color: var(--third-color-dark);
 }
 
 .faq-btn,
 .newsletter-button {
-    color: white;
-    border-color: var(--second-color);
-    background-color: var(--second-color);
+  color: white;
+  border-color: var(--second-color);
+  background-color: var(--second-color);
 }
 
 .faq-btn:hover,
 .newsletter-button:hover {
-    background-color: var(--second-color);
+  background-color: var(--second-color);
 }
 
 .book-form-abt {
-    background-color: var(--third-color-dark);
-    padding: 40px 0px;
-    border-top-right-radius: 20%;
-    border-bottom-left-radius: 20%;
+  background-color: var(--third-color-dark);
+  padding: 40px 0px;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
 }
 
-
 @media (max-width: 965px) {
-    .privacy-det {
-        padding: 0px 20px;
-    }
+  .privacy-det {
+    padding: 0px 20px;
+  }
 }
 
 @media (max-width: 765px) {
-    .privacy-det {
-        padding: 0px 10px;
-    }
+  .privacy-det {
+    padding: 0px 10px;
+  }
+  .modal-text h4 {
+    font-size: 25px;
+  }
+  .mel-diff h2 {
+    font-size: 42px;
+  }
 
-    .mel-diff h2 {
-        font-size: 42px;
-    }
-
-    .mel-diff h5 {
-        font-size: 22px;
-    }
+  .mel-diff h5 {
+    font-size: 22px;
+  }
 }
 
-@media screen and (max-width:480px) {
-    .mel-diff h2 {
-        font-size: 32px;
-    }
+@media screen and (max-width: 480px) {
+  .mel-diff h2 {
+    font-size: 32px;
+  }
 }
