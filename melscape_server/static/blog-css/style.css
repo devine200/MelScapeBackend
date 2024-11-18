@@ -1295,7 +1295,9 @@ section {
 }
 .post.post-list-sm.circle .thumb {
   max-width: 60px;
+  max-height: 60px;
 }
+
 .post.post-list-sm.circle .details {
   margin-left: 80px;
 }

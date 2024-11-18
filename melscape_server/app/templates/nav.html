@@ -29,10 +29,10 @@
             </a><a href="{% url 'contact' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf25" class="navlink w-inline-block">
               <div>Contact Us</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="tel:+44 7448 824220" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf29" aria-current="page" class="navlink phone w-inline-block w--current">
-              <div class="nav-phone">+44 7448 824220</div>
+            </a><a href="tel:{{ site_info.phone_number }}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf29" aria-current="page" class="navlink phone w-inline-block w--current">
+              <div class="nav-phone">{{ site_info.phone_number }}</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="mailto:info@melscape.com " class="w-inline-block nav-mail"><ion-icon name="mail-outline"></ion-icon></a><a data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#" class="book-button w-button">Book Appointment</a>
+            </a><a href="mailto:{{ site_info.email_1 }} " class="w-inline-block nav-mail"><ion-icon name="mail-outline"></ion-icon></a><a data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#" class="book-button w-button">Book Appointment</a>
           </div>
         </nav>
         <div class="nav-flex">
@@ -54,51 +54,20 @@
           <h4 class="">Set up a call with us</h4>
         </div>
         <div class="form-block-newsletter w-form">
-          <form
-            data-name="Newsletter Pop Up"
-            name="wf-form-Newsletter-Pop-Up"
-            id="email-form"
-            method="get"
-            class="newsletter-pop"
-            data-wf-page-id="5fb94d66e5e1d82f06729c39"
-            data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf3d"
-          >
-            <input
-              type="submit"
-              data-wait="Please wait..."
-              class="submit-button w-button scroll-down "
-              value="Get Started"
-            />
+          <form data-name="Newsletter Pop Up" name="wf-form-Newsletter-Pop-Up" id="email-form" method="get" class="newsletter-pop" data-wf-page-id="5fb94d66e5e1d82f06729c39" data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf3d">
+            <input type="submit" data-wait="Please wait..." class="submit-button w-button scroll-down" value="Schedule Here" />
           </form>
           <div class="success-message w-form-done">
-            <img
-              src="https://cdn.prod.website-files.com/5ec27bf8d6ed603740f47152/5ec45a92405dcd465ce0b534_formas-y-simbolos.svg"
-              width="35"
-              alt=""
-            />
+            <img src="https://cdn.prod.website-files.com/5ec27bf8d6ed603740f47152/5ec45a92405dcd465ce0b534_formas-y-simbolos.svg" width="35" alt="" />
             <div class="top-margin _15-pixels">
               <div>Thank you! Your submission has been received!</div>
             </div>
           </div>
           <div class="error-message w-form-fail">
-            <div>
-              Oops! Something went wrong while submitting the form.
-            </div>
+            <div>Oops! Something went wrong while submitting the form.</div>
           </div>
         </div>
-        <a
-          href="#"
-          data-ix="hide-modal"
-          data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf49"
-          class="close-contact-form w-inline-block"
-          style="background-color: var(--third-color-darker)"
-          ><img
-            src="https://cdn.prod.website-files.com/5e46c99de4a0d2042023afcb/5e5582cebcdb732c41a98606_cerrar%20(2).svg"
-            width="12"
-            alt=""
-            class="close-x"
-            
-        /></a>
+        <a href="#" data-ix="hide-modal" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf49" class="close-contact-form w-inline-block" style="background-color: var(--third-color-darker)"><img src="https://cdn.prod.website-files.com/5e46c99de4a0d2042023afcb/5e5582cebcdb732c41a98606_cerrar%20(2).svg" width="12" alt="" class="close-x" /></a>
       </div>
     </div>
   </div>
@@ -148,24 +117,24 @@
         <div class="top-margin _5-pixels">
           <div class="flex">
             <div class="side-form-icon">
-              <!--   <img
+              <!--     <img
                 src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc309ae2843d5ac31673fa_ayuda.svg"
                 loading="lazy"
                 width="24"
                 alt=""
-              />   -->
+              />     -->
               <div class="question-icon">
                 <ion-icon name="help-outline"></ion-icon>
               </div>
             </div>
             <div class="book-arrow">
-              <a href="/faq.html" class="w-inline-block">
+              <a href="{% url 'faq' %}" class="w-inline-block">
                 <h6 class="h6-small">Have questions?</h6>
                 <ion-icon name="arrow-forward-outline"></ion-icon>
               </a>
               <div>
                 <div class="text-small-gray">
-                  <a href="/faq.html" class="link-green sec-color">Find</a>
+                  <a href="{% url 'faq' %}" class="link-green sec-color">Find</a>
                   answers to commonly asked <br />questions.
                 </div>
               </div>
@@ -179,14 +148,14 @@
             <ion-icon name="call-outline"></ion-icon>
           </div>
           <div class="book-arrow">
-            <a href="/contact-us.html" class="w-inline-block">
+            <a href="{% url 'contact' %}" class="w-inline-block">
               <h6 class="h6-small">Call us</h6>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </a>
             <div>
               <div class="text-small-gray">
                 <!-- Monday to Friday 9:00am to 5:00pm<br /> -->
-                <a href="/contact-us.html" class="link-green sec-color">+44 7448 824220</a>
+                <a href="tel:{{ site_info.phone_number }}" class="link-green sec-color">{{ site_info.phone_number }}</a>
               </div>
             </div>
           </div>

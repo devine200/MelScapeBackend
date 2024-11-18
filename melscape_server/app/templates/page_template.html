@@ -25,6 +25,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <style>
+      :root {
+        --hero-background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{{hero_section.cover_photo.url}}")
+      }
+    </style>
     {% block heading %}
 
     {% endblock %}

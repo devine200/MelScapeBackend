@@ -98,7 +98,7 @@
     <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f07" style="opacity: 0" class="content-wrapper w-container">
       <div class="faq-block">
         <div class="narrow-wrapper">
-          <div>
+          {% comment %} <div>
             <h3 class="no-top-margin">Services</h3>
             <div class="top-margin _20-pixels">
               <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f0e" style="opacity: 0" class="faq-wrapper">
@@ -219,114 +219,41 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="top-margin _60-pixels">
-            <h3>Cost & Rate</h3>
-            <div class="top-margin _20-pixels">
-              <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f3c" style="opacity: 0" class="faq-wrapper">
-                <a href="#" data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f3d" class="faq-trigger w-inline-block">
-                  <div class="full-width">
-                    <div class="faq-wrap-text">
-                      <div class="question">How much does your service cost?</div>
-                    </div>
+          </div> {% endcomment %}
+          {% for category in faq_categories %}
+            <div class="top-margin _60-pixels">
+              <h3>{{ category.category }}</h3>
+              <div class="top-margin _20-pixels">
+                {% for faq in category.faqs.all %}
+                  <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f3c" style="opacity: 0" class="faq-wrapper">
+                    <a href="#" data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f3d" class="faq-trigger w-inline-block">
+                      <div class="full-width">
+                        <div class="faq-wrap-text">
+                          <div class="question">{{ faq.question }}</div>
+                        </div>
+                      </div>
+                      <div class="faq-arrow-box">
+                        <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" width="15" style="
+                                -webkit-transform: translate3d(0, 0, 0)
+                                  scale3d(1, 1, 1) rotateX(0) rotateY(0)
+                                  rotateZ(-90deg) skew(0, 0);
+                                -moz-transform: translate3d(0, 0, 0)
+                                  scale3d(1, 1, 1) rotateX(0) rotateY(0)
+                                  rotateZ(-90deg) skew(0, 0);
+                                -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                                  rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
+                                transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
+                                  rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
+                              " alt="" class="arrow" />
+                      </div>
+                    </a>
+                    <div style="height: 0px" class="faq-content">{{ faq.answer|safe }}</div>
                   </div>
-                  <div class="faq-arrow-box">
-                    <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" width="15" style="
-                            -webkit-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -moz-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          " alt="" class="arrow" />
-                  </div>
-                </a>
-                <div style="height: 0px" class="faq-content">
-                  <p>The cost of vacation rental management services can vary depending on the company, location, and level of service provided.</p>
-
-                  <ul>
-                    <li>
-                      Commission-Based Fees: Percentage of Rental Income: MelScape charge a percentage of the rental income, typically ranging from 20% to 30%. This fee covers services like guest communication, booking management, cleaning coordination, and property maintenance.<p>The percentage can vary depending on the level of service provided, and the location of the property.</p>
-                    </li>
-                    <li>Setup or Onboarding Fee MelScape charge a one-time onboarding fee, which covers listing creation, photography, and initial property setup. This can range from £200 to £500.</li>
-                    <li>
-                      Additional Service Fees Cleaning Fees: Cleaning fees are usually passed on to the guest, but some we may charge owners if extra cleaning is required or if it’s not covered by guest payments.<p>Maintenance or Repairs: The cost of property maintenance and repairs is typically not included in the management fee. MelScape will handle the logistics but may charge homeowner for repair costs.</p>
-                    </li>
-                    <li>Example: If your property earns £2,000 per month and the management company charges a 20% commission, you would pay £400 to the company each month, and they would handle the majority of the property management tasks.</li>
-                  </ul>
-                  <br />
-                  <b>Hidden fees or potential surcharges for additional services.</b>
-                </div>
-              </div>
-              <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f4a" style="opacity: 0" class="faq-wrapper">
-                <a href="#" data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f4b" class="faq-trigger w-inline-block">
-                  <div class="full-width">
-                    <div class="faq-wrap-text">
-                      <div class="question">How will you decide what the rental rate will be for my property?</div>
-                    </div>
-                  </div>
-                  <div class="faq-arrow-box">
-                    <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" width="15" style="
-                            -webkit-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -moz-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          " alt="" class="arrow" />
-                  </div>
-                </a>
-                <div style="height: 0px" class="faq-content">
-                  <p>MelScape has developed a dynamic pricing algorithm designed to maximize rental rates based on market trends, similar to those used by hotels and airlines.</p>
-                  <p>By factoring in comparables, local events, and seasonal demand, we ensure your property captures peak market value and maintains high occupancy.</p>
-                  <p>This advantage allows us to provide exceptional value to our owners, often making our services a self-sustaining investment</p>
-                </div>
-              </div>
-              <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f58" style="opacity: 0" class="faq-wrapper last">
-                <a href="#" data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f59" class="faq-trigger w-inline-block">
-                  <div class="full-width">
-                    <div class="faq-wrap-text">
-                      <div class="question">Are there additional fees?</div>
-                    </div>
-                  </div>
-                  <div class="faq-arrow-box">
-                    <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" width="15" style="
-                            -webkit-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -moz-transform: translate3d(0, 0, 0)
-                              scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                              rotateZ(-90deg) skew(0, 0);
-                            -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                            transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                              rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          " alt="" class="arrow" />
-                  </div>
-                </a>
-                <div style="height: 0px" class="faq-content">
-                  <p>
-                    <b>Some additional fee might include:</b>
-                  </p>
-                  <ul>
-                    <li>Cleaning Fees: Cleaning fees are usually passed on to the guest, but some we may charge owners if extra cleaning is required or if it’s not covered by guest payments.</li>
-                    <li>Maintenance or Repairs: The cost of property maintenance and repairs is typically not included in the management fee. MelScape will handle the logistics but may charge homeowner for repair costs.</li>
-                    <p>Example: If your property earns £2,000 per month and the management company charges a 20% commission, you would pay £400 to the company each month, and they would handle the majority of the property management tasks.</p>
-                    <b>Hidden fees or potential surcharges for additional services.</b>
-                  </ul>
-                </div>
+                {% endfor %}
               </div>
             </div>
-          </div>
-          <div class="top-margin _60-pixels">
+          {% endfor %}
+          {% comment %} <div class="top-margin _60-pixels">
             <h3>Other</h3>
             <div class="top-margin _20-pixels">
               <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f6a" style="opacity: 0" class="faq-wrapper">
@@ -422,11 +349,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
         <div data-w-id="1cf3cf2b-8351-d2f0-a22a-19318c399f94" style="opacity: 0" class="top-margin _30-pixels">
           <div class="center-content">
-            <a href="/contact-us.html" class="button-outline-dark w-button faq-btn">Contact us</a>
+            <a href="{% url 'contact' %}" class="button-outline-dark w-button faq-btn">Contact us</a>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@
         <div class="footer-left">
           <div>
             <a
-              href="/"
+              href="{% url 'index' %}"
               aria-current="page"
               class="footer-logo w-inline-block w--current"
               ><img src="{% static '/images/melscape_logo.png'%}" width="34.5" alt=""
@@ -21,22 +21,22 @@
           <div class="top-margin _20-pixels">
             <div>
               <a
-                href="https://www.facebook.com/share/TxhGY3omYH665gvS/?mibextid=LQQJ4d"
+                href="{{ site_info.facebook_link }}"
                 target="_blank"
                 class="social-icon-mini facebook w-inline-block"
               ></a
               ><a
-                href="#"
+                href="{{ site_info.twitter_link }}"
                 target="_blank"
                 class="social-icon-mini twittter w-inline-block"
               ></a
               ><a
-                href="https://www.instagram.com/melscapehub/profilecard/?igsh=NTlycmUxaGRmMzRv"
+                href="{{ site_info.instagram_link }}"
                 target="_blank"
                 class="social-icon-mini instagram w-inline-block"
               ></a
               ><a
-                href="mailto:info@melscape.com"
+                href="mailto:{{site_info.email_1}}"
                 target="_blank"
                 class="social-icon-mini email w-inline-block"
               ></a>

@@ -1,320 +1,196 @@
 {% extends 'page_template.html' %}
 {% load static %}
+{% load even_filter %}
 {% block heading %}
-<title>Melscape</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  .w-webflow-badge {
-    display: none !important;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  b,
-  .question {
-    color: var(--first-color-dark);
-    font-family: 'Cormorant' !important;
-  }
-  
-  .on-load-3 {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .post-link:hover {
-    color: #e3a240 !important;
-  }
-  
-  .calculator-container {
-    width: 100%;
-    /* max-width: 1200px; */
-    padding: 8rem 20px 20px;
-    background-color: white;
-  }
-  
-  .calculator-inner-container {
-    background-color: #f1ece4;
-    border-radius: 5px;
-    padding: 4rem 20px 40px;
-  }
-  
-  .calculator-container h1 {
-    /* color: white; */
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-  }
-  
-  .calculator-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: end;
-  
-    font-family: 'Helvetica';
-  }
-  
-  .input-group {
-    width: 100%;
-    /* background: white; */
-    padding: 15px;
-    border-radius: 12px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .input-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #4a5568;
-    font-weight: 500;
-  }
-  
-  .bedroom-counter {
-    border: 2px solid #e2e8f0;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px;
-    border-radius: 8px;
-  }
-  
-  .counter-btn {
-    width: 35px;
-    height: 35px;
-    border: 2px solid #6b46c1;
-    background: white;
-    border-radius: 8px;
-    color: #6b46c1;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  
-  .counter-btn:hover {
-    background: #6b46c1;
-    color: white;
-  }
-  
-  .counter-value {
-    font-size: 18px;
-    min-width: 100px;
-    text-align: center;
-  }
-  
-  .address-input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.2s;
-  }
-  
-  .address-input:focus {
-    outline: none;
-    border-color: #6b46c1;
-  }
-  
-  .estimate-btn {
-    background: #6b46c1;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-    width: 100%;
-  }
-  
-  .estimate-btn:hover {
-    background: #553c9a;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 10px;
+  <title>Melscape</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .w-webflow-badge {
+      display: none !important;
     }
-  
+    
     h1,
-    .calculator-container h1 {
-      font-size: 2rem;
-      margin-bottom: 30px;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    b,
+    .question {
+      color: var(--first-color-dark);
+      font-family: 'Cormorant' !important;
     }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .calculator-inner-container {
-      padding: 2rem 0 20px;
-    }
-  
-    .mel-diff h2,
-    .hero-h1 {
-      font-size: 32px !important;
-    }
-  
-    .hero-text {
-      font-size: 14px;
-    }
-  
-    .home-info h3 {
-      font-size: 25px;
-    }
-  
+    
     .on-load-3 {
-      flex-direction: column;
-      gap: 7px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .post-link:hover {
+      color: #e3a240 !important;
+    }
+    
+    .calculator-container {
+      width: 100%;
+      /* max-width: 1200px; */
+      padding: 8rem 20px 20px;
+      background-color: white;
+    }
+    
+    .calculator-inner-container {
+      background-color: #f1ece4;
+      border-radius: 5px;
+      padding: 4rem 20px 40px;
+    }
+    
+    .calculator-container h1 {
+      /* color: white; */
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    
+    .calculator-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: end;
+    
+      font-family: 'Helvetica';
+    }
+    
+    .input-group {
+      width: 100%;
+      /* background: white; */
+      padding: 15px;
+      border-radius: 12px;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    }
+    
+    .input-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4a5568;
+      font-weight: 500;
+    }
+    
+    .bedroom-counter {
+      border: 2px solid #e2e8f0;
+      background-color: white;
+      display: flex;
       align-items: center;
-      margin-top: 3rem;
+      justify-content: space-between;
+      padding: 7px;
+      border-radius: 8px;
     }
-  
-    .text-big {
-      font-size: 15px;
+    
+    .counter-btn {
+      width: 35px;
+      height: 35px;
+      border: 2px solid #6b46c1;
+      background: white;
+      border-radius: 8px;
+      color: #6b46c1;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-  
-    .feature-text-box {
+    
+    .counter-btn:hover {
+      background: #6b46c1;
+      color: white;
+    }
+    
+    .counter-value {
+      font-size: 18px;
+      min-width: 100px;
+      text-align: center;
+    }
+    
+    .address-input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    
+    .address-input:focus {
+      outline: none;
+      border-color: #6b46c1;
+    }
+    
+    .estimate-btn {
+      background: #6b46c1;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
       width: 100%;
     }
-  
-    h1,
-    .calculator-container h1 {
-      font-size: 1.25rem;
+    
+    .estimate-btn:hover {
+      background: #553c9a;
     }
-  }
-</style>
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+    
+      h1,
+      .calculator-container h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .calculator-inner-container {
+        padding: 2rem 0 20px;
+      }
+    
+      .mel-diff h2,
+      .hero-h1 {
+        font-size: 32px !important;
+      }
+    
+      .hero-text {
+        font-size: 14px;
+      }
+    
+      .home-info h3 {
+        font-size: 25px;
+      }
+    
+      .on-load-3 {
+        flex-direction: column;
+        gap: 7px;
+        align-items: center;
+        margin-top: 3rem;
+      }
+    
+      .text-big {
+        font-size: 15px;
+      }
+    
+      .feature-text-box {
+        width: 100%;
+      }
+    
+      h1,
+      .calculator-container h1 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 {% endblock %}
 {% block content %}
-  <!-- Old Hero Section -->
-  <!--   <div
-        style="
-          -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          -ms-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
-            rotateY(0) rotateZ(0) skew(0, 0);
-          opacity: 0;
-        "
-        class="on-load"
-      >
-        <div id="Top" class="hero">
-          <div class="hero-bg"></div>
-          <div class="flex">
-            <div class="hero-left">
-              <div>
-                <div
-                  style="
-                    -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    -ms-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    opacity: 0;
-                  "
-                  class="on-load"
-                >
-                  <div class="text-white">Melscape</div>
-                </div>
-                <div
-                  style="
-                    -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    -ms-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                    opacity: 0;
-                  "
-                  class="on-load-2"
-                >
-                  <h1 class="hero-h1">
-                    Management Services for Vacation Rental Properties
-                  </h1>
-                </div>
-                <div class="top-margin _15-pixels">
-                  <div
-                    style="
-                      -webkit-transform: translate3d(0, 15px, 0)
-                        scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
-                        skew(0, 0);
-                      -moz-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                        rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                      -ms-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                        rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                      transform: translate3d(0, 15px, 0) scale3d(1, 1, 1)
-                        rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                      opacity: 0;
-                    "
-                    class="on-load-3"
-                  >
-                    <p class="subtitle white">
-                      Maximize Your Rental Income with Expert Property
-                      Management Solutions
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-delay="4000"
-              data-animation="cross"
-              class="slider w-slider"
-              data-autoplay="true"
-              data-easing="ease"
-              data-hide-arrows="false"
-              data-disable-swipe="false"
-              data-autoplay-limit="0"
-              data-nav-spacing="3"
-              data-duration="1500"
-              data-infinite="true"
-            >
-              <div class="w-slider-mask">
-                <div class="w-slide">
-                  <div class="cover-image hero-slide"></div>
-                </div>
-                <div class="w-slide">
-                  <div class="cover-image hero-slide-2"></div>
-                </div>
-                <div class="w-slide">
-                  <div class="cover-image hero-slide-3"></div>
-                </div>
-              </div>
-              <div class="left-arrow w-slider-arrow-left">
-                <img
-                  src="/images/icons/arrow-left.svg"
-                  loading="lazy"
-                  width="23"
-                  alt=""
-                />
-              </div>
-              <div class="right-arrow w-slider-arrow-right">
-                <img
-                  src="/images/icons/arrow-right.svg"
-                  loading="lazy"
-                  width="23"
-                  alt=""
-                />
-              </div>
-              <div class="display-none w-slider-nav w-round"></div>
-            </div>
-          </div>
-          <div class="content-wrapper w-container"></div>
-        </div>
-      </div>   -->
-
   <!-- Hero section -->
   <div style="
           -webkit-transform: translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0)
@@ -355,13 +231,13 @@
             <div class="text-white capitalize font-bold mb-3">MELSCAPE</div>
           </div>
           <div class="on-load-2">
-            <h1 class="hero-h1 home-hero w-full text-center font-bold">Unlock the Full Potential of Your Property</h1>
-            <p class="hero-text">Let us help you make the most of your investment! Our expert team specializes in maximizing rental income through smart strategies, competitive pricing, and top-notch tenant services. With our proactive approach, you’ll enjoy steady, reliable income—while we handle the details.</p>
+            <h1 class="hero-h1 home-hero w-full text-center font-bold">{{ hero_section.header }}</h1>
+            <p class="hero-text">{{ hero_section.details }}</p>
           </div>
           <div class="top-margin _15-pixels">
             <div class="on-load-3">
-              <a class="button w-button book-ap-h" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#">Book Appointment</a>
-              <a href="/about-us.html" class="button w-button how-works">How it works</a>
+              <a class="button w-button book-ap-h" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="{{ hero_section.second_button_link }}">{{ hero_section.first_button_text }}</a>
+              <a href="{{ hero_section.second_button_link }}" class="button w-button how-works">{{ hero_section.second_button_text }}</a>
             </div>
           </div>
         </div>
@@ -379,111 +255,9 @@
           <ion-icon name="home-outline"></ion-icon>
         </div>
         <div class="top-margin _15-pixels">
-          <p class="intro-text">More Than Just Property Managers—We’re Your Property Partners</p>
+          <p class="intro-text">{{ hero_section.slogan_header }}</p>
         </div>
-
-        <!--  <div class="top-margin _20-pixels">
-               <img
-                src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9a489ff41de38d789c522_Signa.png"
-                loading="lazy"
-                width="269"
-                alt=""
-              /> 
-            </div>  -->
       </div>
-
-      <!--   <div class="flex">
-            <div
-              data-w-id="1a87731e-3b9d-3de6-a84c-f7b51dd65dd9"
-              style="opacity: 0"
-              class="intro-text-column"
-            >
-              <h3 class="h3-small">
-                Discover our property<br />where you’ll find amazing amenities
-              </h3>
-              <div class="underline"></div>
-            </div>
-            <div class="intro-box">
-              <img
-                src="{% static '/images/home/home-sec-1.png"
-                loading="lazy"
-                width="262"
-                alt=""
-              />
-              <div class="image-bg _1"></div>
-              <div class="overlay">
-                <a href="#PropertyManage" class="intro-link"
-                  >Property Management</a
-                >
-              </div>
-              <a
-                href="#PropertyManage"
-                data-w-id="b3cd4a4f-c123-a2e5-a280-dcbf353e2d66"
-                style="opacity: 0"
-                class="corner-link w-inline-block"
-                ><img
-                  src="/images/icons/arrow-right.svg"
-                  loading="lazy"
-                  width="23"
-                  alt=""
-                  class="arrow-right"
-              /></a>
-            </div>
-            <div class="intro-box">
-              <img
-                src="/images/home/home-sec-2.png"
-                loading="lazy"
-                width="262"
-                alt=""
-              />
-              <div
-                data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a4c"
-                class="image-bg _2"
-              ></div>
-              <div class="overlay">
-                <a href="#VacationRent" class="intro-link">Vacation Rentals</a>
-              </div>
-              <a
-                href="#VacationRent"
-                data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a50"
-                style="opacity: 0"
-                class="corner-link w-inline-block"
-                ><img
-                  src="/images/icons/arrow-right.svg"
-                  loading="lazy"
-                  width="23"
-                  alt=""
-                  class="arrow-right"
-              /></a>
-            </div>
-            <div class="intro-box last">
-              <img
-                src="/images/home/home-sec-3.png"
-                loading="lazy"
-                width="262"
-                alt=""
-              />
-              <div
-                data-w-id="3176fa3f-f789-db64-da9f-ebf681ea79f6"
-                class="image-bg _3"
-              ></div>
-              <div class="overlay">
-                <a href="/about-us.html" class="intro-link">More Info</a>
-              </div>
-              <a
-                data-w-id="3176fa3f-f789-db64-da9f-ebf681ea79fa"
-                style="opacity: 0"
-                href="/about-us.html"
-                class="corner-link w-inline-block"
-                ><img
-                  src="/images/icons/arrow-right.svg"
-                  loading="lazy"
-                  width="23"
-                  alt=""
-                  class="arrow-right"
-              /></a>
-            </div>
-          </div>   -->
     </div>
   </div>
 
@@ -537,552 +311,79 @@
     <br /><br />
     <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72683" style="opacity: 0" class="content-wrapper w-container">
       <!-- Property Management -->
-      <div class="flex">
-        <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685" class="flex-column-center right">
-          <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686" class="">
-            <div class="rounded">
-              <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png" loading="lazy" width="596" alt="" />
-              <div class="cover-image _5 rounded-[40px]"></div>
-              <!-- <div class="red-corner-block">Thermal Pool</div> -->
-            </div>
-          </div>
-        </div>
-        <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d" class="flex-column-text left">
-          <div class="">
-            <div class="title-box">
-              <h3 class="w-full">Looking for a Hassle-Free Airbnb Management Solution?</h3>
-              <div class="underline"></div>
-            </div>
-            <div class="top-margin _20-pixels">
-              <div class="top-margin _25-pixels">
-                <p class="text-big mb-5 leading-7">At Melscape, we’re dedicated to lightening your load while maximizing your property’s earning potential. Our team of industry experts combines a human-centered approach to hospitality with cutting-edge technology, offering personalized, end-to-end services tailored to make property management seamless and worry-free. Let us handle the details so you can enjoy peace of mind and boosted returns.</p>
-                <p class="text-big leading-7">Step beyond traditional rental limitations. Our goal is to reshape the short-term rental market, bringing you a simpler, more accessible path to increased income. With our professional team at your side, enjoy a fully turn-key property management experience, from listing and guest management to maximizing returns—all without lifting a finger.</p>
-                <a class="button w-button mt-6 mr-12 book-ap-h" href="about-us.html">More about us</a>
+      {% for description in cta_descriptions %}
+        {% if description.is_aligned_left == False %}
+          <div class="flex">
+            <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685" class="flex-column-center right">
+              <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686" class="">
+                <div class="rounded">
+                  <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png" loading="lazy" width="596" alt="" />
+                  <div class="cover-image _5 rounded-[40px]"></div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!--   <img
-              src="/images/swirl-left.png"
-              loading="lazy"
-              width="128"
-              alt=""
-              class="left-top-corner swirl "
-            />   -->
-      </div>
-      <br /><br /><br />
-
-      <!-- Vacation Rental -->
-      <div class="top-margin _35-pixels marg-b">
-        <div class="flex mobile-reverse">
-          <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2" class="flex-column-text right">
-            <div class="">
-              <div class="title-box">
-                <h3>Be Part of the Short-Term Rental Revolution</h3>
-                <div class="underline"></div>
-              </div>
-              <div class="top-margin _25-pixels">
-                <p class="text-big mb-5 leading-7">Short-term rentals are booming, driven by platforms like Airbnb. If you’re ready to welcome the next generation of travelers, partnering with Melscape, a comprehensive Airbnb management company, can simplify your journey. We handle everything for you, saving you time and effort while maximizing your revenue potential. Let us help you thrive in this exciting market!</p>
-                <p class="text-big leading-7">Curious about how we’ve empowered property owners just like you to thrive on Airbnb? Explore our reviews and case studies to hear firsthand from Melscape hosts about their experiences with our rental management services. Join a community of satisfied clients and see the difference we can make!</p>
-                <a class="button w-button mt-6 mr-12 book-ap-h" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#">Become a host</a>
-              </div>
-            </div>
-          </div>
-          <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd" class="flex-column-center left">
-            <div class="">
-              <div class="absolute-bottom"></div>
-              <div class="rounded">
-                <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png" loading="lazy" width="596" alt="" />
-                <div class="cover-image _6 rounded-[40px]">
-                  <!-- <div class="red-corner-block left">Infinity Pool</div> -->
+            <div data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d" class="flex-column-text left">
+              <div class="">
+                <div class="title-box">
+                  <h3 class="w-full">{{ description.header }}</h3>
+                  <div class="underline"></div>
+                </div>
+                <div class="top-margin _20-pixels">
+                  <div class="top-margin _25-pixels">
+                    <p class="text-big mb-5 leading-7">{{ description.details_top }}</p>
+                    <p class="text-big leading-7">{{ description.details_bottom }}</p>
+                    <a class="button w-button mt-6 mr-12 book-ap-h" href="{{ description.cta_button_link }}">{{ description.cta_button_text }}</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!--   <img
-                src="/images/swirl-right.png"
-                loading="lazy"
-                width="168.5"
-                alt=""
-                class="right-bottom-corner"
-              />   -->
-        </div>
-      </div>
-      <br /><br /><br />
+          {% else %}
+          <!-- Vacation Rental -->
+          <div class="top-margin _35-pixels marg-b">
+            <div class="flex mobile-reverse">
+              <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13e2" class="flex-column-text right">
+                <div class="">
+                  <div class="title-box">
+                    <h3>{{ description.header }}</h3>
+                    <div class="underline"></div>
+                  </div>
+                  <div class="top-margin _25-pixels">
+                    <p class="text-big mb-5 leading-7">{{ description.details_top }}</p>
+                    <p class="text-big leading-7">{{ description.details_bottom }}</p>
+                    {% if description.cta_button_link == "#" %}
+                      <a class="button w-button mt-6 mr-12 book-ap-h" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="{{ description.cta_button_link }}">{{ description.cta_button_text }}</a>
+                    {% else %}
+                      <a class="button w-button mt-6 mr-12 book-ap-h" href="{{ description.cta_button_link }}">{{ description.cta_button_text }}</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div data-w-id="5d52f1bc-820d-0fa6-953a-b6c678ce13fd" class="flex-column-center left">
+                <div class="">
+                  <div class="absolute-bottom"></div>
+                  <div class="rounded">
+                    <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png" loading="lazy" width="596" alt="" />
+                    <div class="cover-image _6 rounded-[40px]">
+                      <!-- <div class="red-corner-block left">Infinity Pool</div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--    <img
+                    src="/images/swirl-right.png"
+                    loading="lazy"
+                    width="168.5"
+                    alt=""
+                    class="right-bottom-corner"
+                  />    -->
+            </div>
+          </div>
+        {% endif %}
+        <br /><br /><br />
+      {% endfor %}
     </div>
   </div>
-
-  <!-- Certified -->
-  <!--   <div class="content-section padding">
-        <div
-          data-w-id="19f75a85-dec2-44f2-02f5-651508287627"
-          style="opacity: 0"
-          class="content-wrapper w-container"
-        >
-          <div class="flex">
-            <div
-              data-w-id="5fbfa438-630c-f82a-de09-8011c9589e81"
-              style="opacity: 0"
-              class="intro-image"
-            >
-              <div class="relative-full-height">
-                <div class="absolute-bottom">
-                  <div
-                    data-w-id="be6468b3-47e5-5490-507c-246743117ff7"
-                    style="opacity: 0"
-                    class="block-border-title"
-                  >
-                    Certified
-                  </div>
-                </div>
-                <div class="rounded">
-                  <img
-                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbaf7e6795486e8816c7390_4%20(1).jpg"
-                    loading="lazy"
-                    width="427.5"
-                    alt=""
-                    srcset="
-                      https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbaf7e6795486e8816c7390_4%20(1)-p-500.jpeg 500w,
-                      https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbaf7e6795486e8816c7390_4%20(1)-p-800.jpeg 800w,
-                      https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbaf7e6795486e8816c7390_4%20(1).jpg        855w
-                    "
-                    sizes="(max-width: 479px) 100vw, (max-width: 767px) 41vw, (max-width: 991px) 42vw, (max-width: 1279px) 38vw, 427.5px"
-                  />
-                  <div class="cover-image _1"></div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-w-id="f3be854a-212b-7be4-00f8-c9c12835000d"
-              style="opacity: 0"
-              class="flex-column-center"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Best choice for vacation rental & property management</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <p class="text-big">
-                    We are a full-service property management firm specializing
-                    in vacation rentals, Airbnb hosting, and rental arbitrage,
-                    with expertise in the hospitality and real estate markets
-                  </p>
-                  <p class="text-big">
-                    We provide complete solutions for property owners to
-                    maximize rental income.
-                  </p>
-                  <div class="top-margin _15-pixels">
-                    <div class="flex">
-                      <div class="horizontal-box">
-                        <div class="vertical-icon">
-                          <div class="shield-icon">
-                            <ion-icon name="shield-outline"></ion-icon>
-                          </div>
-                        </div>
-                        <div class="flex-vertical-text">
-                          <div class="top-margin _10-pixels">
-                            <p class="text-small">100%<br />Ratings</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="horizontal-box last">
-                        <div class="vertical-icon">
-                          <div class="shield-icon">
-                            <ion-icon name="reader-outline"></ion-icon>
-                          </div>
-                        </div>
-                        <div class="flex-vertical-text">
-                          <div class="top-margin _10-pixels">
-                            <p class="text-small">Best <br />Rated</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="top-margin _15-pixels">
-                    <p class="text-big">
-                      Delivering exceptional, home-like guest experiences!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>   -->
-
-  <!-- Discover property -->
-  <!--   <div class="content-section">
-        <div
-          id="PropertyManage"
-          data-w-id="699ea41d-34ab-1886-a653-7fb74b094ca2"
-          style="opacity: 0"
-          class="content-wrapper w-container"
-        >
-          <div class="heading-box large">
-            <div class="locate-icon">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="top-margin _15-pixels">
-              <h2>Discover our property where you’ll find amazing amenities</h2>
-              <div class="underline center"></div>
-            </div>
-          </div>
-        </div>
-        <div class="flex">
-          <div
-            data-delay="4000"
-            data-animation="slide"
-            class="slider-2 w-slider"
-            data-autoplay="false"
-            data-easing="ease"
-            style="opacity: 0"
-            data-hide-arrows="false"
-            data-disable-swipe="false"
-            data-w-id="51792b10-1e8e-5fe0-2787-41bd76dd1fdc"
-            data-autoplay-limit="0"
-            data-nav-spacing="3"
-            data-duration="500"
-            data-infinite="true"
-          >
-            <div class="w-slider-mask">
-              <div class="w-slide">
-                <a
-                  href="#"
-                  data-w-id="1efba9c8-ac87-2d1d-c751-50646b447258"
-                  class="lightbox-link _1 w-inline-block w-lightbox"
-                  ><img
-                    src="https://cdn.prod.website-files.com/img/placeholder-thumb.svg"
-                    loading="lazy"
-                    alt=""
-                    class="display-none"
-                  />
-                  <div class="hover-image _1"></div>
-                  <script type="application/json" class="w-json">
-                    {
-                      "items": [
-                        {
-                          "_id": "5fb9882037b13900ebc2796f",
-                          "origFileName": "im3rd-media-f888opoBHUo-unsplash.jpg",
-                          "fileName": "im3rd-media-f888opoBHUo-unsplash.jpg",
-                          "fileSize": 333096,
-                          "height": 1316,
-                          "url": "https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882037b13900ebc2796f_im3rd-media-f888opoBHUo-unsplash.jpg",
-                          "width": 1980,
-                          "type": "image"
-                        }
-                      ],
-                      "group": ""
-                    }
-                  </script></a
-                >
-              </div>
-              <div class="w-slide">
-                <a
-                  href="#"
-                  data-w-id="b7ebdf1c-a81f-4a3b-6fd4-3137b5aeb1e3"
-                  class="lightbox-link w-inline-block w-lightbox"
-                  ><img
-                    src="https://cdn.prod.website-files.com/img/placeholder-thumb.svg"
-                    loading="lazy"
-                    alt=""
-                    class="display-none"
-                  />
-                  <div class="hover-image _2"></div>
-                  <script type="application/json" class="w-json">
-                    {
-                      "items": [
-                        {
-                          "_id": "5fb988250386f984e3d1a09a",
-                          "origFileName": "r-architecture-KpMj15W7otY-unsplash.jpg",
-                          "fileName": "r-architecture-KpMj15W7otY-unsplash.jpg",
-                          "fileSize": 203163,
-                          "height": 1320,
-                          "url": "https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988250386f984e3d1a09a_r-architecture-KpMj15W7otY-unsplash.jpg",
-                          "width": 1980,
-                          "type": "image"
-                        }
-                      ],
-                      "group": ""
-                    }
-                  </script></a
-                >
-              </div>
-              <div class="w-slide">
-                <a
-                  href="#"
-                  data-w-id="e31221fd-9cec-87d5-2a73-23ec94064614"
-                  class="lightbox-link _1 w-inline-block w-lightbox"
-                  ><img
-                    src="https://cdn.prod.website-files.com/img/placeholder-thumb.svg"
-                    loading="lazy"
-                    alt=""
-                    class="display-none"
-                  />
-                  <div class="hover-image _3"></div>
-                  <script type="application/json" class="w-json">
-                    {
-                      "items": [
-                        {
-                          "_id": "5fb988251f61a68ca52a404c",
-                          "origFileName": "r-architecture-KQgrVfR3r74-unsplash.jpg",
-                          "fileName": "r-architecture-KQgrVfR3r74-unsplash.jpg",
-                          "fileSize": 293076,
-                          "height": 1349,
-                          "url": "https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988251f61a68ca52a404c_r-architecture-KQgrVfR3r74-unsplash.jpg",
-                          "width": 1980,
-                          "type": "image"
-                        }
-                      ],
-                      "group": ""
-                    }
-                  </script></a
-                >
-              </div>
-            </div>
-            <div
-              data-w-id="51792b10-1e8e-5fe0-2787-41bd76dd1fe0"
-              style="opacity: 0"
-              class="corner-link-top w-slider-arrow-left"
-            >
-              <img
-                src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb99a770ed0ddb93cf41a03_flecha-apuntando-a-la-derecha%20(3).svg"
-                loading="lazy"
-                width="20"
-                alt=""
-                class="arrow-right"
-              />
-            </div>
-            <div
-              data-w-id="51792b10-1e8e-5fe0-2787-41bd76dd1fe2"
-              style="opacity: 0"
-              class="corner-link-bottom w-slider-arrow-right"
-            >
-              <img
-                src="/images/icons/arrow-right.svg"
-                loading="lazy"
-                width="20"
-                alt=""
-                class="arrow-right"
-              />
-            </div>
-            <div class="display-none w-slider-nav w-round"></div>
-          </div>
-          <div
-            data-w-id="82b22148-bb2b-b564-9a66-52423ac615ee"
-            style="opacity: 0"
-            class="text-column"
-          >
-            <div class="max-433-pixels">
-              <div class="title-box">
-                <h3>Find the perfect rental property for your needs</h3>
-                <div class="underline"></div>
-              </div>
-              <div class="top-margin _20-pixels">
-                <p class="text-big">
-                  We handle every aspect of property management, from marketing
-                  and listing to maintenance and guest communication. We ensure
-                  that properties are well-maintained, secure, and operating
-                  efficiently, taking the hassle out of managing rental
-                  properties for owners.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="top-margin _35-pixels">
-          <div class="flex">
-            <div
-              data-w-id="f72dc4c6-e7b8-40d9-dd24-bf8e4acfaa28"
-              style="opacity: 0"
-              class="text-column left"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Enjoy our property for a weekend or a longer stay</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <p class="text-big">
-                    We offer fully furnished, short-term rental solutions for
-                    all variety of clients, including business travelers,
-                    families, and digital nomads.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <a
-              href="#"
-              data-w-id="e507c3a4-8a09-ec3d-5eb3-70e63c0713fd"
-              style="opacity: 0"
-              class="image-column w-inline-block w-lightbox"
-              ><img
-                src="https://cdn.prod.website-files.com/img/placeholder-thumb.svg"
-                loading="lazy"
-                alt=""
-                class="display-none"
-              />
-              <div class="hover-image _6"></div>
-              <div
-                data-w-id="3fb07060-dd0b-f790-e88f-7c0daacf96f0"
-                style="opacity: 0"
-                class="circular-tag"
-              ></div>
-              <script type="application/json" class="w-json">
-                {
-                  "items": [
-                    {
-                      "_id": "5fb988258b0fccd21b029361",
-                      "origFileName": "r-architecture-slpIkPF5BmI-unsplash.jpg",
-                      "fileName": "r-architecture-slpIkPF5BmI-unsplash.jpg",
-                      "fileSize": 202608,
-                      "height": 1259,
-                      "url": "https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988258b0fccd21b029361_r-architecture-slpIkPF5BmI-unsplash.jpg",
-                      "width": 1980,
-                      "type": "image"
-                    }
-                  ],
-                  "group": ""
-                }
-              </script></a
-            >
-          </div>
-        </div>
-      </div>   -->
-
-  <!-- Second info -->
-  <!--   <div
-        id="VacationRent"
-        data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72682"
-        class="content-section double"
-      >
-        <div
-          data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72683"
-          style="opacity: 0"
-          class="content-wrapper w-container"
-        >
-          <div class="flex">
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf7268d"
-              style="opacity: 0"
-              class="flex-column-center"
-            >
-              <div class="max-433-pixels">
-                <div class="title-box">
-                  <h3>Rated the best clean and minimalist rental in town</h3>
-                  <div class="underline"></div>
-                </div>
-                <div class="top-margin _20-pixels">
-                  <div class="top-margin _25-pixels">
-                    <div class="flex">
-                      <p class="bullet-point">•</p>
-                      <div class="expand">
-                        <div class="title-inline">Find excellent deals</div>
-                      </div>
-                    </div>
-                    <div class="left-padding">
-                      <p class="text-big">
-                        With expertise in rental pricing strategies & dynamic
-                        rate adjustments our company ensures that properties
-                        achieve maximum profitability.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="top-margin _25-pixels">
-                    <div class="flex">
-                      <p class="bullet-point">•</p>
-                      <div class="expand">
-                        <div class="title-inline">Flexible solutions</div>
-                      </div>
-                    </div>
-                    <div class="left-padding">
-                      <p class="text-big">
-                        Whether managing a single property or an entire
-                        portfolio, our company offers scalable services that
-                        adapt to the needs of property owners, from vacation
-                        homeowners to large-scale investors
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72685"
-              style="opacity: 0"
-              class="half-column"
-            >
-              <div
-                data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72686"
-                class="relative-full-height"
-              >
-                <div class="absolute-bottom">
-                  <div
-                    data-w-id="aa55cb5b-a7d1-18b4-963f-7052daf72688"
-                    style="opacity: 0"
-                    class="block-border-title couch"
-                  >
-                    Spacious Areas
-                  </div>
-                </div>
-                <div class="rounded">
-                  <img
-                    src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e5f4c87f9cfd0ad3d_13-bg.png"
-                    loading="lazy"
-                    alt=""
-                    width="596"
-                  />
-                  <div class="cover-image _2"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>   -->
-
-  <!--   <div class="section-full">
-        <div class="_70-percent-column">
-          <div
-            data-w-id="5f56333f-e25d-7500-91bc-c308131604e1"
-            style="opacity: 0"
-            class="rounded-half"
-          >
-            <img
-              src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e61699527ab357bed_14-bg.png"
-              loading="lazy"
-              alt=""
-              width="562.5"
-            />
-            <div class="cover-image _3"></div>
-          </div>
-          <div
-            data-w-id="4e739222-3e0b-e5c5-9dce-20b7cc2831d5"
-            style="opacity: 0"
-            class="rounded-item"
-          >
-            <img
-              src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881e61699527ab357bed_14-bg.png"
-              loading="lazy"
-              alt=""
-              width="562.5"
-            />
-            <div class="cover-image _4"></div>
-          </div>
-        </div>
-        <div
-          data-w-id="74e38217-d923-b5db-887b-42a44c4f4c47"
-          style="opacity: 0"
-          class="text-block-column"
-        >
-          <div class="max-433-pixels">
-            <div class="title-box large">
-              <h3>Find the perfect place to spend a great weekend</h3>
-              <div class="underline"></div>
-            </div>
-          </div>
-        </div>
-      </div>   -->
 
   <!-- Melscape difference -->
   <div class="content-section mel-diff">
@@ -1096,78 +397,24 @@
         </div>
         <div class="narrow-wrapper">
           <div class="flex">
-            <div data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12" style="opacity: 0" class="feature">
-              <div>
-                <div class="heart-icon">
-                  <ion-icon name="key-outline"></ion-icon>
+            {% for service in core_services %}
+              {% if loop.index0|is_even != 0 %}
+                <div data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12" style="opacity: 0" class="feature">
+              {% else %}
+                <div data-w-id="f9048cd7-a67b-365b-8593-3875e8368850" style="opacity: 0" class="feature">
+              {% endif %}
+                <div>
+                  <div class="heart-icon">
+                    <ion-icon name="{{ service.icon_name }}"></ion-icon>
+                  </div>
+                  <h5>{{ service.header }}</h5>
+                  <div class="underline center"></div>
                 </div>
-                <h5>Complete Turnkey Solutions</h5>
-                <div class="underline center"></div>
-              </div>
-              <div class="feature-text-box">
-                <p class="text-big">We manage everything from captivating photography to outstanding guest relations, ensuring your property stands out and your guests enjoy a welcoming experience.</p>
-              </div>
-            </div>
-            <div data-w-id="f9048cd7-a67b-365b-8593-3875e8368850" style="opacity: 0" class="feature">
-              <div>
-                <div class="chat-icon">
-                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                <div class="feature-text-box">
+                  <p class="text-big">{{ service.details }}</p>
                 </div>
-                <h5>24/7 Full Support</h5>
-                <div class="underline center"></div>
               </div>
-              <div class="feature-text-box">
-                <p class="text-big">We take pride in delivering outstanding customer service, available around the clock to address your questions and needs. Count on us for assistance, ensuring a seamless and satisfying experience at every stage.</p>
-              </div>
-            </div>
-            <div data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12" style="opacity: 0" class="feature">
-              <div>
-                <div class="heart-icon">
-                  <ion-icon name="trash-bin-outline"></ion-icon>
-                </div>
-                <h5>In-house maintenance & housekeeping</h5>
-                <div class="underline center"></div>
-              </div>
-              <div class="feature-text-box">
-                <p class="text-big">Our dedicated team of trained professionals is committed to delivering high-quality maintenance, keeping your property in excellent condition. This lets you focus on what matters most while we take care of the upkeep.</p>
-              </div>
-            </div>
-            <div data-w-id="f9048cd7-a67b-365b-8593-3875e8368850" style="opacity: 0" class="feature">
-              <div>
-                <div class="chat-icon">
-                  <ion-icon name="people-outline"></ion-icon>
-                </div>
-                <h5>A Unique Human-Tech Hybrid Approach</h5>
-                <div class="underline center"></div>
-              </div>
-              <div class="feature-text-box">
-                <p class="text-big">At our Airbnb management company, we leverage cutting-edge technology to enhance the expertise of our top-rated team, ensuring every guest receives a personal touch. Experience the perfect blend of innovation and hospitality that sets us apart.</p>
-              </div>
-            </div>
-            <div data-w-id="4b582369-35b6-43e1-8ca2-8dea29bf505b" style="opacity: 0" class="feature no-margin">
-              <div>
-                <div class="note-icon">
-                  <ion-icon name="receipt-outline"></ion-icon>
-                </div>
-                <h5>Elevate Your Rental Experience</h5>
-                <div class="underline center"></div>
-              </div>
-              <div class="feature-text-box">
-                <p class="text-big">Our experienced team understands the unique challenges of the rental market and is here to help you navigate them. We’re dedicated to providing the support and innovative solutions you need for a rewarding rental journey.</p>
-              </div>
-            </div>
-            <div data-w-id="f6e08ace-8d05-3b87-fcd8-b8bcae82aec5" style="opacity: 0" class="feature last">
-              <div>
-                <div class="earth-icon">
-                  <ion-icon name="card-outline"></ion-icon>
-                </div>
-                <h5>Dynamic Pricing</h5>
-                <div class="underline center"></div>
-              </div>
-              <div class="feature-text-box">
-                <p class="text-big">We track real-time demand and local events to optimize pricing, ensuring you achieve the highest returns on your property. Our proactive approach keeps you in tune with market trends, so you never miss an opportunity to boost your rental income.</p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -1181,75 +428,24 @@
         <h3 class="text-5xl font-semibold">Four steps to start earning more</h3>
       </div>
       <div class="flex mb-40">
+        {% for step in steps_to_earns %}
         <div class="intro-box">
           <img src="{% static '/images/home/home-sec-1.png' %}" loading="lazy" width="262" alt="" />
-          <div class="image-bg _1"></div>
+          <div class="image-bg _1" style="background-image: url('{{ step.cover_photo.url }}')"></div>
           <div class="overlay">
-            <a href="contact-us.html" class="intro-link">Send an enquiry</a>
+            <a href="contact-us.html" class="intro-link">{{ step.step_text }}</a>
           </div>
-          <a href="contact-us.html" data-w-id="b3cd4a4f-c123-a2e5-a280-dcbf353e2d66" style="opacity: 0" class="corner-link w-inline-block steps-num">
-            <!--   <img
-                src="/images/icons/arrow-right.svg"
+          <a href="{{ step.cta_button_link }}" data-w-id="b3cd4a4f-c123-a2e5-a280-dcbf353e2d66" style="opacity: 0" class="corner-link w-inline-block steps-num">
+            <img
+                src="{% static '/images/icons/arrow-right.svg' %}"
                 loading="lazy"
                 width="23"
                 alt=""
                 class="arrow-right"
-            />   -->
-
-            1
+            />   
           </a>
         </div>
-        <div class="intro-box">
-          <img src="{% static '/images/home/home-sec-2.png' %}" loading="lazy" width="262" alt="" />
-          <div data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a4c" class="image-bg _2"></div>
-          <div class="overlay">
-            <a href="contact-us.html" class="intro-link">Property setup & onboarding</a>
-          </div>
-          <a href="contact-us.html" data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a50" style="opacity: 0" class="corner-link w-inline-block steps-num">
-            2
-            <!--   <img
-                src="/images/icons/arrow-right.svg"
-                loading="lazy"
-                width="23"
-                alt=""
-                class="arrow-right"
-            />   -->
-          </a>
-        </div>
-        <div class="intro-box">
-          <img src="{% static '/images/home/home-sec-2.png' %}" loading="lazy" width="262" alt="" />
-          <div data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a4c" class="image-bg _4"></div>
-          <div class="overlay">
-            <a class="intro-link">Go live</a>
-          </div>
-          <a data-w-id="72b5324a-dc0b-cb50-adaa-fc97b1962a50" style="opacity: 0" class="corner-link w-inline-block steps-num">
-            3
-            <!--   <img
-              src="/images/icons/arrow-right.svg"
-              loading="lazy"
-              width="23"
-              alt=""
-              class="arrow-right"
-          />   -->
-          </a>
-        </div>
-        <div class="intro-box last">
-          <img src="{% static '/images/home/home-sec-3.png' %}" loading="lazy" width="262" alt="" />
-          <div data-w-id="3176fa3f-f789-db64-da9f-ebf681ea79f6" class="image-bg _3"></div>
-          <div class="overlay">
-            <a class="intro-link">24/7 intelligence</a>
-          </div>
-          <a data-w-id="3176fa3f-f789-db64-da9f-ebf681ea79fa" style="opacity: 0" class="corner-link w-inline-block steps-num">
-            4
-            <!--   <img
-              src="/images/icons/arrow-right.svg"
-              loading="lazy"
-              width="23"
-              alt=""
-              class="arrow-right"
-          />   -->
-          </a>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -1268,11 +464,12 @@
         </div>
         <div class="narrow-wrapper">
           <div>
+            {% for faq in recent_faqs %}
             <div class="faq-wrapper">
               <a href="#" data-w-id="89a3097d-6a0a-6e86-fadd-87a764f6b4fe" class="faq-trigger w-inline-block">
                 <div class="full-width">
                   <div class="faq-wrap-text">
-                    <div class="question">What services does Melscape provide?</div>
+                    <div class="question">{{ faq.question }}</div>
                   </div>
                 </div>
                 <div class="faq-arrow-box">
@@ -1290,202 +487,10 @@
                 </div>
               </a>
               <div style="height: 0px" class="faq-content">
-                <p>
-                  MelScape Ltd offer a range of services designed to make the process of renting out a property easier and more efficient for property owners. <br />
-                  <b>These services can include:</b>
-                </p>
-                <ul>
-                  <li>Property Listing and Marketing: Creation and management of listings on popular platforms like Airbnb, Vrbo, Booking.com, etc. This includes professional photography, writing compelling descriptions, and setting competitive pricing strategies.</li>
-                  <li>Guest Communication and Booking Management: Handling all communication with guests, from initial inquiries to post-stay follow-ups. This often includes booking confirmations, answering questions, and dealing with any issues that arise during the stay.</li>
-                  <li>Dynamic Pricing: Adjusting rental prices based on demand, seasonality, and local events to maximize revenue.</li>
-                  <li>Cleaning and Maintenance: Coordinating regular cleaning after each guest stay, conducting property inspections, and arranging for necessary repairs or maintenance.</li>
-                  <li>Check-In/Check-Out Services: Managing the check-in and check-out process, including key exchange or smart lock setups, and ensuring guests have a seamless arrival and departure.</li>
-                  <li>Property Management and Maintenance: Routine inspections, coordinating repairs, and managing relationships with local contractors or handymen.</li>
-                  <li>Guest Support: Offering 24/7 guest support for any emergencies or issues that arise during the guest's stay.</li>
-                  <li>Financial Management: Handling payments, security deposits, taxes, and providing detailed financial reporting to the property owner.</li>
-                  <li>Insurance and Liability Coverage: Airbnb offers AirCover, which provides both insurance and liability coverage for hosts. This protection is designed to give hosts peace of mind in case something goes wrong during a guest’s stay.</li>
-                </ul>
+                {{ faq.answer|safe }}
               </div>
             </div>
-            <div data-w-id="c35761ad-ac62-1431-1f78-50a5cd183b3c" style="opacity: 0" class="faq-wrapper">
-              <a href="#" data-w-id="c35761ad-ac62-1431-1f78-50a5cd183b3d" class="faq-trigger w-inline-block">
-                <div class="full-width">
-                  <div class="faq-wrap-text">
-                    <div class="question">How long does it take to get started?</div>
-                  </div>
-                </div>
-                <div class="faq-arrow-box">
-                  <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" alt="" style="
-                          -webkit-transform: translate3d(0, 0, 0)
-                            scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                            rotateZ(-90deg) skew(0, 0);
-                          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                        " width="15" class="arrow" />
-                </div>
-              </a>
-              <div style="height: 0px" class="faq-content">
-                <p>
-                  Getting started with a vacation rental management service typically takes anywhere from a few days to a couple of weeks, depending on several factors.
-                  <b>Here's an outline of the process and timeline:</b>
-                </p>
-                <ul>
-                  <li>Initial Consultation and Property Evaluation (1-3 days): We will typically start with an initial consultation to assess your property, understand your goals, and provide an overview of our services.</li>
-                  <li>Onboarding and Paperwork (1-7 days): Once you choose us to Manage your property, you will need to sign a management agreement, provide property details, and possibly share your ownership documents and insurance information with us.</li>
-                  <li>Photography and Listing Creation (3-7 days): MelScape will arrange for professional photography and create your property’s online listings. This can take a few days depending on scheduling and the completion of your property profile on various booking platforms.</li>
-                  <li>Setting Up Property Maintenance and Logistics (1-5 days): Our Company will coordinate cleaning services, maintenance contacts, and guest communication protocols. If your property requires any immediate repairs or setup, this could extend the timeline slightly.</li>
-                  <li>Marketing and Going Live (1-2 days): Once the listing is created and everything is set up, the property can go live for bookings.</li>
-                </ul>
-                <br />
-                <p>In general, the process can be as quick as 5-7 days if everything is prepared and goes smoothly. However, it may take up to 2 weeks if there are delays with inspections, photography, or repairs.</p>
-              </div>
-            </div>
-            <div data-w-id="5c8e6286-3067-4b0b-a32e-f9b1d9744cf6" style="opacity: 0" class="faq-wrapper">
-              <a href="#" data-w-id="5c8e6286-3067-4b0b-a32e-f9b1d9744cf7" class="faq-trigger w-inline-block">
-                <div class="full-width">
-                  <div class="faq-wrap-text">
-                    <div class="question">How to get started?</div>
-                  </div>
-                </div>
-                <div class="faq-arrow-box">
-                  <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" alt="" style="
-                          -webkit-transform: translate3d(0, 0, 0)
-                            scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                            rotateZ(-90deg) skew(0, 0);
-                          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                        " width="15" class="arrow" />
-                </div>
-              </a>
-              <div style="height: 0px" class="faq-content">
-                <p>
-                  <b>To get started with vacation rental management, follow these steps:</b>
-                </p>
-                <ul>
-                  <li>Schedule an Initial Consultation: Contact us to discuss your property. During this consultation, we will explain how the process works, review your property, and answer any questions.</li>
-                  <li>Sign the Management Agreement: We will review the terms and conditions, including our commission rate, responsibilities, and expectations for both parties. Sign the agreement to officially start the relationship.</li>
-                  <li>Prepare Your Property: Ensure your property is clean, well-maintained, and stocked with essentials for guests. If required, complete any repairs or upgrades to make it guest-ready.</li>
-                  <li>Professional Photography: We offer or require professional photography to make your listing attractive to potential guests. Schedule the photo session.</li>
-                  <li>Listing Creation: We will create your property listing on popular platforms like Airbnb, Vrbo, and Booking.com. We will also write compelling descriptions, set pricing strategies, and optimize the listing for visibility.</li>
-                  <li>Set Up Maintenance and Cleaning: Work with MelScape to set up regular cleaning and maintenance schedules. This will ensures your property is well-maintained between guest stays.</li>
-                  <li>Launch Your Property: Once the listing is live and everything is in place, your property is ready to accept bookings. MelScape will handle guest communications, bookings, and all ongoing management.</li>
-                </ul>
-                <br />
-                <p>By following these steps, you'll have a seamless process to get your vacation rental property up and running with minimal effort.</p>
-              </div>
-            </div>
-            <div data-w-id="ac822ecd-0125-d980-79c3-c9ed1f03daf9" style="opacity: 0" class="faq-wrapper">
-              <a href="#" data-w-id="ac822ecd-0125-d980-79c3-c9ed1f03dafa" class="faq-trigger w-inline-block">
-                <div class="full-width">
-                  <div class="faq-wrap-text">
-                    <div class="question">How much does your service cost?</div>
-                  </div>
-                </div>
-                <div class="faq-arrow-box">
-                  <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" alt="" style="
-                          -webkit-transform: translate3d(0, 0, 0)
-                            scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                            rotateZ(-90deg) skew(0, 0);
-                          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                        " width="15" class="arrow" />
-                </div>
-              </a>
-              <div style="height: 0px" class="faq-content">
-                <p>The cost of vacation rental management services can vary depending on the company, location, and level of service provided.</p>
-
-                <ul>
-                  <li>
-                    Commission-Based Fees: Percentage of Rental Income: MelScape charge a percentage of the rental income, typically ranging from 20% to 30%. This fee covers services like guest communication, booking management, cleaning coordination, and property maintenance.<p>The percentage can vary depending on the level of service provided, and the location of the property.</p>
-                  </li>
-                  <li>Setup or Onboarding Fee MelScape charge a one-time onboarding fee, which covers listing creation, photography, and initial property setup. This can range from £200 to £500.</li>
-                  <li>
-                    Additional Service Fees Cleaning Fees: Cleaning fees are usually passed on to the guest, but some we may charge owners if extra cleaning is required or if it’s not covered by guest payments.<p>Maintenance or Repairs: The cost of property maintenance and repairs is typically not included in the management fee. MelScape will handle the logistics but may charge homeowner for repair costs.</p>
-                  </li>
-                  <li>Example: If your property earns £2,000 per month and the management company charges a 20% commission, you would pay £400 to the company each month, and they would handle the majority of the property management tasks.</li>
-                </ul>
-                <br />
-                <b>Hidden fees or potential surcharges for additional services.</b>
-              </div>
-            </div>
-            <div data-w-id="742a4441-9b74-8e20-640c-db085e5ab8b0" style="opacity: 0" class="faq-wrapper">
-              <a href="#" data-w-id="742a4441-9b74-8e20-640c-db085e5ab8b1" class="faq-trigger w-inline-block">
-                <div class="full-width">
-                  <div class="faq-wrap-text">
-                    <div class="question">Where can we find reviews of the property?</div>
-                  </div>
-                </div>
-                <div class="faq-arrow-box">
-                  <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" alt="" style="
-                          -webkit-transform: translate3d(0, 0, 0)
-                            scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                            rotateZ(-90deg) skew(0, 0);
-                          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                        " width="15" class="arrow" />
-                </div>
-              </a>
-              <div style="height: 0px" class="faq-content">
-                <p>
-                  To find reviews of a property, you can check several popular platforms that specialize in real estate or travel. <b>Here are some reliable options:</b>
-                </p>
-                <ul>
-                  <li>Google Reviews: You can search the property on Google Maps, where users often leave detailed reviews.</li>
-                  <li>Zillow or Realtor.com: For real estate properties, these websites provide reviews and ratings, along with other property-related data.</li>
-                  <li>Yelp: Some properties, especially rentals, might have reviews on Yelp.</li>
-                  <li>Airbnb or Vrbo: If the property is a vacation rental, these platforms are excellent sources of guest reviews.</li>
-                  <li>TripAdvisor: Particularly useful for vacation properties, TripAdvisor allows travelers to leave feedback.</li>
-                  <li>Booking.com: For hotels or short-term rentals, Booking.com often has detailed guest reviews.</li>
-                  <li>Reddit or Online Forums: Occasionally, people discuss properties and experiences on platforms like Reddit, which can provide informal but candid feedback.</li>
-                </ul>
-                <br />
-                <p>You can search any of these sources by entering the property’s name and location.</p>
-              </div>
-            </div>
-            <div data-w-id="6f0b55f6-5683-e65e-0e2e-1d5bbcdf7f14" style="opacity: 0" class="faq-wrapper last">
-              <a href="#" data-w-id="6f0b55f6-5683-e65e-0e2e-1d5bbcdf7f15" class="faq-trigger w-inline-block">
-                <div class="full-width">
-                  <div class="faq-wrap-text">
-                    <div class="question">Are there additional fees?</div>
-                  </div>
-                </div>
-                <div class="faq-arrow-box">
-                  <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb988231f61a67e202a4049_Arrow.png" alt="" style="
-                          -webkit-transform: translate3d(0, 0, 0)
-                            scale3d(1, 1, 1) rotateX(0) rotateY(0)
-                            rotateZ(-90deg) skew(0, 0);
-                          -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                          transform: translate3d(0, 0, 0) scale3d(1, 1, 1)
-                            rotateX(0) rotateY(0) rotateZ(-90deg) skew(0, 0);
-                        " width="15" class="arrow" />
-                </div>
-              </a>
-              <div style="height: 0px" class="faq-content">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur
-                  <a href="#">adipiscing</a> elit sed do eiusmod tempor.
-                </p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
           <div data-w-id="f0723c42-9d1b-230a-2a1c-48976cb50ab2" style="opacity: 0" class="top-margin _20-pixels">
             <div class="center-content">
@@ -1494,6 +499,18 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="calculator-container">
+    <div class="calculator-inner-container booking-container">
+      <h1>We list your property on the best 60+ of the best booking sites</h1>
+      <div class="listing-calculator-form booking-platforms">
+        <a href="{{ site_info.airbnb_link }}">airbnb</a>
+        <a href="{{ site_info.booking_link }}">booking.com</a>
+        <a href="{{ site_info.triadvisor_link }}">triadvisor</a>
+      </div>
+      <div class="cta-booking-container"><a class="cta-booking-btn" href="#" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e">Work with us</a></div>
     </div>
   </div>
 
@@ -1523,128 +540,10 @@
       </div>
     </div>
   </div>
-
-  <!-- BLOG -->
-  <div data-w-id="0c5167c3-786b-8b64-8c4e-efabbb5523ea" class="content-section">
-    <div class="content-wrapper w-container">
-      <div class="title-box">
-        <h3 class="text-2xl lg:text-3xl font-semibold">Stay updated</h3>
-        <div class="underline"></div>
-      </div>
-      <div data-w-id="48095ca5-72d1-8784-59cc-a2ce6c8f1299" style="opacity: 0" class="top-margin _30-pixels w-dyn-list">
-        <div role="list" class="flex center-mobile w-dyn-items">
-          <div role="listitem" class="preview-item w-dyn-item">
-            <a data-w-id="de0cae89-0694-080f-c115-51bdb555b226" href="/blog.html" class="post-image-preview w-inline-block">
-              <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png" loading="lazy" alt="" width="361.5" />
-              <div style="
-                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc15136d10099952d5b764_kam-idris-Ot2iTXgC6fY-unsplash%20(1).jpg');
-                    " class="hover-image"></div>
-            </a>
-            <div class="top-margin _15-pixels">
-              <div class="left-padding _10-pixels">
-                <a style="background-color: #e3a240; color: white" href="/category/rentals" class="category-lik">Rentals</a>
-                <div>
-                  <a href="/blog.html" class="post-link">We Are Launching MyRental CMS Webflow Template This Week!</a>
-                </div>
-                <div class="top-margin _10-pixels">
-                  <p>My Rental is a beautiful designed Business Webflow CMS Template.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div role="listitem" class="preview-item w-dyn-item">
-            <a data-w-id="de0cae89-0694-080f-c115-51bdb555b226" href="/blog.html" class="post-image-preview w-inline-block">
-              <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png" loading="lazy" alt="" width="361.5" />
-              <div style="
-                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc15218078bd20a474e4e4_kam-idris-_HqHX3LBN18-unsplash.jpg');
-                    " class="hover-image"></div>
-            </a>
-            <div class="top-margin _15-pixels">
-              <div class="left-padding _10-pixels">
-                <a style="background-color: #e3a240; color: white" href="/category/holidays" class="category-lik">Holidays</a>
-                <div>
-                  <a href="/blog.html" class="post-link">5 Things To See When You Buy Your First Rental Property</a>
-                </div>
-                <div class="top-margin _10-pixels">
-                  <p>My Rental is a beautiful designed Business Webflow CMS Template.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div role="listitem" class="preview-item w-dyn-item">
-            <a data-w-id="de0cae89-0694-080f-c115-51bdb555b226" href="/blog.html" class="post-image-preview w-inline-block">
-              <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882415d1f00b52fde63c_post-bg.png" loading="lazy" alt="" width="361.5" />
-              <div style="
-                      background-image: url('https://cdn.prod.website-files.com/5fbbf7da7e4d4aa5761665ce/5fbc1189b84e9e0fd539d884_kam-idris-kyt0PkBSCNQ-unsplash%20(1).jpg');
-                    " class="hover-image"></div>
-            </a>
-            <div class="top-margin _15-pixels">
-              <div class="left-padding _10-pixels">
-                <a style="background-color: #e3a240; color: white" href="/category/airb-b" class="category-lik">Airb&amp;b</a>
-                <div>
-                  <a href="/blog.html" class="post-link">Rental Friendly Practices For Your Guests</a>
-                </div>
-                <div class="top-margin _10-pixels">
-                  <p>My Rental is a beautiful designed Business Webflow CMS Template.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Follow us -->
-  <div class="content-section double">
-    <div class="content-wrapper w-container">
-      <div class="heading-box large">
-        <div class="title text-2xl lg:text-3xl">Instagram</div>
-        <h2>Follow us</h2>
-      </div>
-      <div class="flex">
-        <a data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec57" href="#" class="insta-pic _1 w-inline-block">
-          <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg" width="382.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 23vw, 24vw" alt="" srcset="
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
-          <div class="cover-image insta-1"></div>
-          <div class="hover-overlay">
-            <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbfa13b8b6a96c23de5071_instagram%20(1).svg" width="40" data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec5b" alt="" class="hover-icon" />
-          </div>
-        </a><a data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec5c" href="#" class="insta-pic _2 w-inline-block">
-          <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg" width="382.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 23vw, 24vw" alt="" srcset="
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
-          <div class="cover-image insta-2"></div>
-          <div class="hover-overlay">
-            <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbfa13b8b6a96c23de5071_instagram%20(1).svg" width="40" data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec60" alt="" class="hover-icon" />
-          </div>
-        </a><a data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec61" href="#" class="insta-pic _3 w-inline-block">
-          <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg" width="382.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 23vw, 24vw" alt="" srcset="
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
-          <div class="cover-image insta-3"></div>
-          <div class="hover-overlay">
-            <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbfa13b8b6a96c23de5071_instagram%20(1).svg" width="40" data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec65" alt="" class="hover-icon" />
-          </div>
-        </a><a data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec66" href="#" class="insta-pic _4 w-inline-block">
-          <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg" width="382.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 23vw, 24vw" alt="" srcset="
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg-p-500.jpeg 500w,
-                  https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbf96d9ecfa10ad3c4b955_Insta-bg.jpg        610w
-                " />
-          <div class="cover-image insta-4"></div>
-          <div class="hover-overlay">
-            <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbbfa13b8b6a96c23de5071_instagram%20(1).svg" width="40" data-w-id="34f2222b-3818-939a-73b0-5c142cd8ec6a" alt="" class="hover-icon" />
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <a href="#Top" data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031" style="opacity: 0; display: none" class="go-up-button w-inline-block"></a>
+ 
+  {% include "recent_blogs.html" %}
+    <a href="#Top" data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031" style="opacity: 0; display: none" class="go-up-button w-inline-block"></a>
+  {% include "instagram.html" %}
 {% endblock %}
 {% block scripts %}
   <script>

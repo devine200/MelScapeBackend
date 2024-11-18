@@ -286,6 +286,38 @@ body {
   color: #333
 }
 
+.booking-container > *  {
+  width: 80%;
+  margin: auto;
+}
+
+.booking-platforms {
+  display: flex;
+  justify-content: space-around;
+  font-family: Helvetica, sans-serif;
+  color: var(--first-color-dark);
+  font-size: 32px;
+  text-transform: capitalize;
+}
+
+.booking-platforms a:hover {
+  color: var(--second-color);
+}
+
+.cta-booking-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.cta-booking-btn {
+  background: #6b46c1;
+  color: white;
+  border-radius: 6px;
+  padding: 10px 25px;
+  font-size: 12;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -2711,6 +2743,7 @@ figcaption {
   font-size: 40px;
 }
 
+
 .footer-input {
   width: 100%;
   height: 48.5px;
@@ -3611,22 +3644,6 @@ figcaption {
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.image-bg._1 {
-  background-image: url("https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881f2823b40badd31a9a_1.jpg");
-}
-
-.image-bg._2 {
-  background-image: url("https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9881f586316bf57bbb4ad_2.jpg");
-}
-
-.image-bg._3 {
-  background-image: url("https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb9882093a2e7686522a9f3_3.jpg");
-}
-
-.image-bg._4 {
-  background-image: url("../images/home/home-hero-1.jpg");
 }
 
 .display-none {
@@ -5379,7 +5396,7 @@ figcaption {
   align-items: center;
   border-radius: 0px 0px 0px 125px;
   /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../images/about/about-hero.jpg"); */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/about/about-hero.jpg");
+  background: var(--hero-background);;
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
