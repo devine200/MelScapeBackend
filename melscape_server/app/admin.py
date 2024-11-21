@@ -23,3 +23,4 @@ admin.site.register(BlogComment)
 admin.site.register(BlogImage)
 
 admin.site.register(ContactInfo)
+admin.site.register(AppointmentBookingRequest)

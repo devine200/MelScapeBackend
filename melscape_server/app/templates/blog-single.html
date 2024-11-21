@@ -415,6 +415,8 @@
 						<form id="comment-form" class="comment-form" action="{% url 'blog_details' blog_post.slug %}" method="post">
 							{% csrf_token %}
 							<div class="messages"></div>
+
+							<input type="hidden" name="req-type" value="COMMENT">
 							
 							<div class="row">
 
@@ -580,7 +582,16 @@ type="text/javascript"
 <script src="{% static 'blog-js/slick.min.js'%}"></script>
 <script src="{% static 'blog-js/jquery.sticky-sidebar.min.js'%}"></script>
 <script src="{% static 'blog-js/custom.js'%}"></script>
-
+{% if is_modal_active %}
+<script>
+	document.querySelector("#modal-activator").click()
+</script>
+{% endif %}
+{% if ba_error_message %}
+<script>
+	document.querySelector(".book-button").click()
+</script>
+{% endif %}
 </body>
 
 <!-- Mirrored from katen-template.netlify.app/html/blog-single by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2024 15:03:40 GMT -->

@@ -123,6 +123,7 @@
           <h6>Type us your message</h6>
           <div class="form-block-2 w-form">
             <form data-name="Contact Form" name="wf-form-Contact-Form" id="email-form" method="POST" class="form-flex" action="{% url 'contact' %}">{% csrf_token %}
+              <input type="hidden" name="req-type" value="CONTACT">
               <input type="text" class="input w-input" maxlength="256" name="first-name" data-name="Name" placeholder="Your name" id="field" required="required" />
               <input type="text" class="input w-input" maxlength="256" name="last-name" data-name="Last Name" placeholder="Your last name" id="field" required="required" />
               <input type="email" class="input w-input" maxlength="256" name="email" data-name="Email" placeholder="your@email.com" id="field" required="required" />

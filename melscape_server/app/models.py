@@ -88,13 +88,14 @@ class HowWeCanHelpSection(models.Model):
    
     
 class SiteInfo(models.Model):
-    facebook_link = models.CharField(max_length=300)
-    twitter_link = models.CharField(max_length=300)
-    instagram_link = models.CharField(max_length=300)
-    email_1 = models.CharField(max_length=300)
-    email_2 = models.CharField(max_length=300)
-    phone_number = models.CharField(max_length=300)
-    calendly_link = models.CharField(max_length=300)
+    facebook_link = models.CharField(max_length=300, default="")
+    tiktok_link = models.CharField(max_length=300, default="")
+    linkedin_link = models.CharField(max_length=300, default="")
+    instagram_link = models.CharField(max_length=300, default="")
+    email_1 = models.CharField(max_length=300, default="")
+    email_2 = models.CharField(max_length=300, default="")
+    phone_number = models.CharField(max_length=300, default="")
+    calendly_link = models.CharField(max_length=300, default="")
     booking_link = models.CharField(max_length=300, default="")
     airbnb_link = models.CharField(max_length=300, default="")
     triadvisor_link = models.CharField(max_length=300, default="")
@@ -158,3 +159,15 @@ class ContactInfo(models.Model):
     
     def __str__(self):
         return f"Contact: {self.first_name} {self.last_name} || Email: {self.email}"
+    
+    
+class AppointmentBookingRequest(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=50)
+    location = models.CharField(max_length=255)
+    message = models.TextField()
+    created_at = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Email: {self.email} || Location: {self.location} || Message: {self.message[:80]}"

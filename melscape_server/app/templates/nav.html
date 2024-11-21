@@ -20,19 +20,26 @@
             <a href="{% url 'about' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf19" class="navlink w-inline-block">
               <div>About Us</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="{% url 'faq' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf1d" class="navlink w-inline-block">
+            </a>
+            <a href="{% url 'faq' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf1d" class="navlink w-inline-block">
               <div>FAQs</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="{% url 'blog' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf21" class="navlink w-inline-block">
+            </a>
+            <a href="{% url 'blog' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf21" class="navlink w-inline-block">
               <div>Blog</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="{% url 'contact' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf25" class="navlink w-inline-block">
+            </a>
+            <a href="{% url 'contact' %}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf25" class="navlink w-inline-block">
               <div>Contact Us</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="tel:{{ site_info.phone_number }}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf29" aria-current="page" class="navlink phone w-inline-block w--current">
+            </a>
+            <a href="tel:{{ site_info.phone_number }}" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf29" aria-current="page" class="navlink phone w-inline-block w--current">
               <div class="nav-phone">{{ site_info.phone_number }}</div>
               <div class="underline-hover mobile-hide"></div>
-            </a><a href="mailto:{{ site_info.email_1 }} " class="w-inline-block nav-mail"><ion-icon name="mail-outline"></ion-icon></a><a data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#" class="book-button w-button">Book Appointment</a>
+            </a>
+            <a href="mailto:{{ site_info.email_1 }} " class="w-inline-block nav-mail"><ion-icon name="mail-outline"></ion-icon></a>
+            <div class="gtranslate_wrapper"></div>
+            <a data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2e" href="#" class="book-button w-button">Book Appointment</a>
           </div>
         </nav>
         <div class="nav-flex">
@@ -54,18 +61,7 @@
           <h4 class="">Set up a call with us</h4>
         </div>
         <div class="form-block-newsletter w-form">
-          <form data-name="Newsletter Pop Up" name="wf-form-Newsletter-Pop-Up" id="email-form" method="get" class="newsletter-pop" data-wf-page-id="5fb94d66e5e1d82f06729c39" data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf3d">
-            <input type="submit" data-wait="Please wait..." class="submit-button w-button scroll-down" value="Schedule Here" />
-          </form>
-          <div class="success-message w-form-done">
-            <img src="https://cdn.prod.website-files.com/5ec27bf8d6ed603740f47152/5ec45a92405dcd465ce0b534_formas-y-simbolos.svg" width="35" alt="" />
-            <div class="top-margin _15-pixels">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-          </div>
-          <div class="error-message w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
+          <a type="submit" data-wait="Please wait..." class="submit-button w-button scroll-down" href="{{ site_info.calendly_link }}">Schedule Here</a>
         </div>
         <a href="#" data-ix="hide-modal" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf49" class="close-contact-form w-inline-block" style="background-color: var(--third-color-darker)"><img src="https://cdn.prod.website-files.com/5e46c99de4a0d2042023afcb/5e5582cebcdb732c41a98606_cerrar%20(2).svg" width="12" alt="" class="close-x" /></a>
       </div>
@@ -93,36 +89,43 @@
       </div>
       <div class="contact-box">
         <div class="book-form w-form">
-          <form data-name="Side Contact Form" name="wf-form-Side-Contact-Form" id="email-form" method="get" class="contact-form" data-wf-page-id="5fb94d66e5e1d82f06729c39" data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf5a">
-            <input class="w-input" maxlength="256" name="Name" data-name="Name" placeholder="Your name" type="text" id="field" />
-            <input class="w-input" maxlength="256" name="Email" data-name="Email" placeholder="Your email" type="email" id="field" />
-            <input class="w-input" name="Phone_number" placeholder="Phone number" type="tel" id="field" />
-            <input class="w-input" name="Arriving-Date" data-name="property_location" placeholder="Where is your property located?" type="text" id="field" />
-            <input class="w-input" name="service_time" placeholder="When do you need service?" type="text" id="field" />
-            <textarea placeholder="Tell us more..." maxlength="5000" data-name="Message" name="Message" id="field" class="contact-textarea w-input"></textarea>
-            <input type="submit" data-wait="Please wait..." class="side-form-submit w-button" value="Send" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2d" />
+          <form data-name="Side Contact Form" name="wf-form-Side-Contact-Form" id="email-form" method="POST" action="{{ request.get_full_path }}" class="contact-form" data-wf-page-id="5fb94d66e5e1d82f06729c39" data-wf-element-id="9b8c5046-c0ca-82df-9168-084d8bf1cf5a">
+            {% csrf_token %}
+            <input type="hidden" name="req-type" value="BOOK_APPOINTMENT" />
+            <input class="w-input" name="name" maxlength="256" data-name="Name" placeholder="Your name" type="text" id="field" required="required" />
+            <input class="w-input" name="email" maxlength="256" data-name="Email" placeholder="Your email" type="email" id="field" required="required" />
+            <input class="w-input" name="phone_number" placeholder="Phone number" type="tel" id="field" />
+            <input class="w-input" name="location" data-name="property_location" placeholder="Where is your property located?" type="text" id="field" required="required" />
+            {% comment %} <input class="w-input" name="service_time" placeholder="When do you need service?" type="text" id="field" /> {% endcomment %}
+            <textarea placeholder="Tell us more..." name="message" maxlength="5000" data-name="Message" id="field" class="contact-textarea w-input" required="required"></textarea>
+            <input type="submit" data-wait="Please wait..." class="side-form-submit w-button" value="Send" />
+            <a href="#" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2d" id="modal-activator" style="visibility: hidden;"></a>
           </form>
-          <div class="success-message w-form-done">
-            <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg" loading="lazy" width="35" alt="" />
-            <div class="top-margin _10-pixels">
-              <div>Thank you! Your submission has been received!</div>
+          {% if ba_success_message %}
+            <div class="success-message w-form-done" style="display: block">
+              <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg" loading="lazy" width="35" alt="" />
+              <div class="top-margin _10-pixels">
+                <div>{{ ba_success_message }}</div>
+              </div>
             </div>
-          </div>
-          <div class="error-message w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
+          {% endif %}
+          {% if ba_error_message %}
+            <div class="error-message w-form-fail" style="display: block">
+              <div>Oops! {{ ba_error_message }}</div>
+            </div>
+          {% endif %}
         </div>
       </div>
       <div class="side-more-options">
         <div class="top-margin _5-pixels">
           <div class="flex">
             <div class="side-form-icon">
-              <!--     <img
+              <!--          <img
                 src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbc309ae2843d5ac31673fa_ayuda.svg"
                 loading="lazy"
                 width="24"
                 alt=""
-              />     -->
+              />          -->
               <div class="question-icon">
                 <ion-icon name="help-outline"></ion-icon>
               </div>

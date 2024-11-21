@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponseNotFound
+from django.shortcuts import render, redirect
+from django.http import HttpResponseNotFound, HttpResponseBadRequest
 from app.models import (
     SiteInfo,
     LandingHeroSection,
@@ -16,6 +16,7 @@ from app.models import (
     BlogCategory,
     BlogComment,
     ContactInfo,
+    AppointmentBookingRequest,
 )
 
 
@@ -26,7 +27,36 @@ def index(request):
     core_services = CoreService.objects.all()
     steps_to_earns = StepsToEarn.objects.all()
     recent_faqs = FAQ.objects.all()[:6]
+    recent_blogs = BlogPost.objects.all().order_by("-created_at")[:3]
     post1, post2, post3, post4 = InstagramPost.objects.all()
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
+    
+    if request.method == "POST":
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
 
     return render(
         request,
@@ -43,6 +73,10 @@ def index(request):
             "post3": post3,
             "post4": post4,
             "recent_faqs": recent_faqs,
+            "recent_blogs": recent_blogs,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
         },
     )
 
@@ -53,6 +87,35 @@ def about(request):
     post1, post2, post3, post4 = InstagramPost.objects.all()
     about_intro = AboutIntroSection.objects.last()
     use_cases = HowWeCanHelpSection.objects.all()
+    recent_blogs = BlogPost.objects.all().order_by("-created_at")[:3]
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
+    
+    if request.method == "POST":
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
 
     return render(
         request,
@@ -67,6 +130,10 @@ def about(request):
             "post4": post4,
             "about_intro": about_intro,
             "use_cases": use_cases,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
+            "recent_blogs": recent_blogs,
         },
     )
 
@@ -74,6 +141,35 @@ def about(request):
 def faq(request):
     site_info = SiteInfo.objects.last()
     faq_categories = FAQCategory.objects.all()
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
+    
+    if request.method == "POST":
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
+    
     return render(
         request,
         "faq.html",
@@ -81,6 +177,9 @@ def faq(request):
             "page_id": "5fbd60c43ba026730a410478",
             "site_info": site_info,
             "faq_categories": faq_categories,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
         },
     )
 
@@ -93,6 +192,34 @@ def blog(request):
         :3
     ]
     blog_categories = BlogCategory.objects.all()
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
+    
+    if request.method == "POST":
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
 
     return render(
         request,
@@ -107,6 +234,9 @@ def blog(request):
             "blog_posts": blog_posts,
             "featured_blogs": featured_blogs,
             "blog_categories": blog_categories,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
         },
     )
 
@@ -121,7 +251,35 @@ def blog_category(request, category):
         is_featured=True, category__category=category
     ).order_by("-created_at")[:3]
     blog_categories = BlogCategory.objects.all()
+    is_modal_active = False
 
+    ba_success_message = None
+    ba_error_message = None
+
+    if request.method == "POST":
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
+    
     return render(
         request,
         "blog.html",
@@ -135,6 +293,9 @@ def blog_category(request, category):
             "blog_posts": blog_posts,
             "featured_blogs": featured_blogs,
             "blog_categories": blog_categories,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
         },
     )
 
@@ -151,18 +312,46 @@ def blog_details(request, slug):
     popular_posts = BlogPost.objects.order_by("-comments__count").order_by(
         "-created_at"
     )[:3]
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
 
     if len(blog_post_filter) == 0:
         return HttpResponseNotFound("")
 
     if request.method == "POST":
-        username = request.POST.get("username", None)
-        email = request.POST.get("email", None)
-        comment = request.POST.get("comment", None)
+        req_type = request.POST.get("req-type", None)
+        
+        if req_type == "COMMENT":
+            username = request.POST.get("username", None)
+            email = request.POST.get("email", None)
+            comment = request.POST.get("comment", None)
 
-        BlogComment.objects.create(
-            name=username, comment=comment, email=email, post=blog_post
-        )
+            BlogComment.objects.create(
+                name=username, comment=comment, email=email, post=blog_post
+            )
+        
+        elif req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
 
     return render(
         request,
@@ -172,6 +361,9 @@ def blog_details(request, slug):
             "site_info": site_info,
             "blog_post": blog_post,
             "popular_posts": popular_posts,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
+            "is_modal_active": is_modal_active,
         },
     )
 
@@ -181,28 +373,53 @@ def contact(request):
     post1, post2, post3, post4 = InstagramPost.objects.all()
     success_message = None
     error_message = None
+    is_modal_active = False
+
+    ba_success_message = None
+    ba_error_message = None
 
     if request.method == "POST":
-        first_name = request.POST.get("first-name", None)
-        last_name = request.POST.get("last-name", None)
-        email = request.POST.get("email", None)
-        phone_number = request.POST.get("mobile", None)
-        message = request.POST.get("message", None)
-        
-        try:
-            ContactInfo.objects.create(
-                first_name=first_name,
-                last_name=last_name,
-                email=email,
-                phone_number=phone_number,
-                message=message,
-            )
-            success_message = "message was submitted succesfully"
-        except Exception as e:
-            error_message = str(e)
-            
-        print(f"success_message: {success_message}")
-        print(f"error_message: {error_message}")
+        req_type = request.POST.get("req-type", None)
+
+        if req_type == "CONTACT":
+            first_name = request.POST.get("first-name", None)
+            last_name = request.POST.get("last-name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("mobile", None)
+            message = request.POST.get("message", None)
+
+            try:
+                ContactInfo.objects.create(
+                    first_name=first_name,
+                    last_name=last_name,
+                    email=email,
+                    phone_number=phone_number,
+                    message=message,
+                )
+                success_message = "message was submitted succesfully"
+            except Exception as e:
+                error_message = str(e)
+
+        elif req_type == "BOOK_APPOINTMENT":
+            name = request.POST.get("name", None)
+            email = request.POST.get("email", None)
+            phone_number = request.POST.get("phone_number", None)
+            location = request.POST.get("location", None)
+            message = request.POST.get("message", None)
+
+            try:
+                AppointmentBookingRequest.objects.create(
+                    name=name,
+                    email=email,
+                    phone_number=phone_number,
+                    location=location,
+                    message=message,
+                )
+                ba_success_message = "Thank you! Your submission has been received!"
+                is_modal_active = True
+
+            except Exception as e:
+                ba_error_message = str(e)
 
     return render(
         request,
@@ -212,10 +429,13 @@ def contact(request):
             "site_info": site_info,
             "success_message": success_message,
             "error_message": error_message,
+            "ba_success_message": ba_success_message,
+            "ba_error_message": ba_error_message,
             "post1": post1,
             "post2": post2,
             "post3": post3,
             "post4": post4,
+            "is_modal_active": is_modal_active,
         },
     )
 
