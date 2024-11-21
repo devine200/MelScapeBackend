@@ -76,7 +76,7 @@
                             rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                           opacity: 0;
                         " class="on-load-2">
-                    <a href="/category/rentals" class="mini-title-link" style="color: #8DC545">{{ featured_blogs.first.category.category }}</a>
+                    <a href="{% url "blog_category" featured_blogs.first.category.category %}" class="mini-title-link" style="color: #8DC545">{{ featured_blogs.first.category.category }}</a>
                   </div>
                   <div style="
                           -webkit-transform: translate3d(0, 15px, 0)
@@ -90,7 +90,7 @@
                             rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                           opacity: 0;
                         " class="on-load-3">
-                    <a href="/post/we-are-launching-myrental-cms-webflow-template-this-week" class="h1-hero-link">{{ featured_blogs.first.heading }}</a>
+                    <a href="{% url 'blog_details' featured_blog.slug %}" class="h1-hero-link">{{ featured_blogs.first.heading }}</a>
                   </div>
                   <div class="top-margin _10-pixels">
                     <div class="_90-percent-box">
@@ -154,7 +154,7 @@
                             rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                           opacity: 0;
                         " class="on-load-2">
-                    <a href="/category/rentals" class="mini-title-link" style="color: #8DC545">{{ blog_posts.first.category.category }}</a>
+                    <a href="{% url "blog_category" blog_posts.first.category.category %}" class="mini-title-link" style="color: #8DC545">{{ blog_posts.first.category.category }}</a>
                   </div>
                   <div style="
                           -webkit-transform: translate3d(0, 15px, 0)
@@ -168,7 +168,7 @@
                             rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                           opacity: 0;
                         " class="on-load-3">
-                    <a href="/post/we-are-launching-myrental-cms-webflow-template-this-week" class="h1-hero-link">{{ blog_posts.first.heading }}</a>
+                    <a href="{% url 'blog_details' featured_blog.slug %}" class="h1-hero-link">{{ blog_posts.first.heading }}</a>
                   </div>
                   <div class="top-margin _10-pixels">
                     <div class="_90-percent-box">
@@ -239,7 +239,7 @@
                           " class="hover-image"></div>
                   </a>
                   <div class="right-text-preview">
-                    <a style="background-color: #E3A240; color: #fff" href="/category/holidays" class="category-lik">{{ blog_post.category.category }}</a>
+                    <a style="background-color: #E3A240; color: #fff" href="{% url 'blog_category' blog_post.category.category %}" class="category-lik">{{ blog_post.category.category }}</a>
                     <div class="top-margin _15-pixels">
                       <a href="{% url 'blog_details' blog_post.slug %}" class="title-link">{{ blog_post.heading }}</a>
                     </div>
@@ -284,15 +284,15 @@
               <div role="list" class="flex w-dyn-items">
                 {% for featured_blog in featured_blogs %}
                   <div role="listitem" class="featured-preview w-dyn-item">
-                    <a data-w-id="8d008310-b5af-c0b5-0a49-0792487e4c35" href="/post/the-6-best-arguments-for-investing-in-rental-property" class="featured-preview-image w-inline-block">
+                    <a data-w-id="8d008310-b5af-c0b5-0a49-0792487e4c35" href="{% url 'blog_details' featured_blog.slug %}" class="featured-preview-image w-inline-block">
                       <img src="https://cdn.prod.website-files.com/5fb94d66e5e1d8ea7d729c38/5fbd948f3872cbcce1055b1f_Featured-bg.png" width="337.5" alt="" />
                       <div style="
                             background-image: url('{{ featured_blog.cover_photo.url }}');" class="hover-image"></div>
                     </a>
                     <div class="featured-text-preview">
-                      <a style="background-color: #e5e2fa; color: #847bd5" href="/category/rentals" class="category-lik">{{ featured_blog.category.category }}</a>
+                      <a style="background-color: #e5e2fa; color: #847bd5" href="{% url 'blog_category' blog_post.category.category %}" class="category-lik">{{ featured_blog.category.category }}</a>
                       <div class="top-margin _15-pixels">
-                        <a href="/post/the-6-best-arguments-for-investing-in-rental-property" class="title-link">{{ featured_blog.heading }}</a>
+                        <a href="{% url 'blog_details' featured_blog.slug %}" class="title-link">{{ featured_blog.heading }}</a>
                       </div>
                       <div class="top-margin _15-pixels">
                         <a href="{% url 'blog_details' featured_blog.slug %}" data-w-id="722d5c52-08c0-6e02-862c-139bc6b97b00" class="read-more w-inline-block">
