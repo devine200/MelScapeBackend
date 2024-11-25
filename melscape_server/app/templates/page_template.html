@@ -27,7 +27,35 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
     <style>
       :root {
-        --hero-background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("</style>
+        --hero-background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{{ hero_section.cover_photo.url }}");
+      }
+
+      #gt_float_wrapper {
+        position: relative;
+        right: 15px;
+      }
+
+      .gt_options{
+        position: relative;
+        top: 90px;
+      }
+
+      .gt_float_switcher.notranslate {
+        transform: scale(0.7)
+      }
+      
+      @media screen and (max-width:990px) {
+        #gt_float_wrapper {
+          position: relative;
+          left: 0px;
+        }
+        .gt_options{
+          position: relative;
+          top: 0px;
+        }
+      }
+    </style>
+
     {% block heading %}
 
     {% endblock %}
