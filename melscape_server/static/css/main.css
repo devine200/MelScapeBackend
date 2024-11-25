@@ -308,6 +308,7 @@ body {
   align-items: center;
 }
 
+
 .booking-platforms a:hover {
   color: var(--second-color);
 }
