@@ -2513,8 +2513,12 @@ figcaption {
   text-align: right;
 }
 
-.subtitle {
+.subtitle, .subtitle > * {
   font-size: 18px;
+}
+
+.subtitle.white > * {
+  color: white;
 }
 
 .content-section {
@@ -7386,7 +7390,7 @@ figcaption {
     line-height: 34px;
   }
 
-  .subtitle {
+  .subtitle, .subtitle > * {
     font-size: 18px;
     line-height: 26px;
   }

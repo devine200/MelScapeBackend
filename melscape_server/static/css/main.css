@@ -2515,8 +2515,12 @@ figcaption {
   text-align: right;
 }
 
-.subtitle {
+.subtitle, .subtitle > * {
   font-size: 18px;
+}
+
+.subtitle.white > p {
+  color: white;
 }
 
 .content-section {

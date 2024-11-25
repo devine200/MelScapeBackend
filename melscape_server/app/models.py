@@ -98,7 +98,7 @@ class SiteInfo(models.Model):
     calendly_link = models.CharField(max_length=300, default="")
     booking_link = models.CharField(max_length=300, default="")
     airbnb_link = models.CharField(max_length=300, default="")
-    triadvisor_link = models.CharField(max_length=300, default="")
+    tripadvisor_link = models.CharField(max_length=300, default="")
     
     def __str__(self):
         return "Melscape Contact Info"

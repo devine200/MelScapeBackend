@@ -1,66 +1,68 @@
 {% extends 'page_template.html' %}
 {% load static %}
 {% block heading %}
-<title>About</title>
-<style>
-  .w-webflow-badge {
-    display: none !important;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  b,
-  .question {
-    color: var(--first-color-dark);
-    font-family: "Cormorant" !important;
-  }
-
-  .about-text-wrapper {
-    max-width: 730px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #f1ece4;
-  }
-
-  .about-text-wrapper p:first-child {
-    font-size: 18px;
-    margin-bottom: 45px;
-  }
-
-  .about-text-wrapper p {
-    letter-spacing: 0.1px;
-    line-height: 29px;
-  }
-
-  .top-margin {
-    margin-bottom: 2.5rem;
-  }
-
-  a:hover {
-    color: white !important;
-  }
-
-  .post-link:hover {
-    color: #e3a240 !important;
-  }
-
-  @media screen and (max-width: 576px) {
-    .feature {
-      width: 100%;
+  <title>About</title>
+  <meta content="About Us | MelScape Property Manager" property="og:title" />
+  <meta content="About Us | MelScape Property Manager" property="twitter:title" />
+  <style>
+    .w-webflow-badge {
+      display: none !important;
     }
-  }
-
-  @media screen and (max-width: 480px) {
-    .mel-diff h2 {
-      font-size: 32px;
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    b,
+    .question {
+      color: var(--first-color-dark);
+      font-family: 'Cormorant' !important;
     }
-  }
-</style>
+    
+    .about-text-wrapper {
+      max-width: 730px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #f1ece4;
+    }
+    
+    .about-text-wrapper p:first-child {
+      font-size: 18px;
+      margin-bottom: 45px;
+    }
+    
+    .about-text-wrapper p {
+      letter-spacing: 0.1px;
+      line-height: 29px;
+    }
+    
+    .top-margin {
+      margin-bottom: 2.5rem;
+    }
+    
+    a:hover {
+      color: white !important;
+    }
+    
+    .post-link:hover {
+      color: #e3a240 !important;
+    }
+    
+    @media screen and (max-width: 576px) {
+      .feature {
+        width: 100%;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .mel-diff h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
 {% endblock %}
 {% block content %}
   <!-- hero section -->
@@ -174,19 +176,19 @@
         <div class="narrow-wrapper">
           <div class="flex">
             {% for use_case in use_cases %}
-            <div data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12" style="opacity: 1" class="feature">
-              <div>
-                <div class="heart-icon">
-                  <!-- <ion-icon name="key-outline"></ion-icon> -->
-                  <img src="{{ use_case.icon.url }}" alt="" />
+              <div data-w-id="58558fcf-bfa6-ef25-fa87-7b88aa267f12" style="opacity: 1" class="feature">
+                <div>
+                  <div class="heart-icon">
+                    <!-- <ion-icon name="key-outline"></ion-icon> -->
+                    <img src="{{ use_case.icon.url }}" alt="" />
+                  </div>
+                  <!-- <h5>Complete Turnkey Solutions</h5> -->
+                  <div class="underline center"></div>
                 </div>
-                <!-- <h5>Complete Turnkey Solutions</h5> -->
-                <div class="underline center"></div>
+                <div class="feature-text-box">
+                  <p class="text-big">{{ use_case.description }}</p>
+                </div>
               </div>
-              <div class="feature-text-box">
-                <p class="text-big">{{ use_case.description }}</p>
-              </div>
-            </div>
             {% endfor %}
             {% comment %} <div data-w-id="f9048cd7-a67b-365b-8593-3875e8368850" style="opacity: 1" class="feature">
               <div>
@@ -285,7 +287,7 @@
           <div class="underline center"></div>
         </div>
         <div class="book-form w-form">
-          <form method="POST"  action="{{ request.get_full_path }}" name="wf-form-Side-Contact-Form" data-name="Side Contact Form" style="opacity: 0" data-w-id="36e5b8bc-e8a4-6d50-f2c1-1318b584be60" id="email-form" class="contact-form-block">
+          <form method="POST" action="{{ request.get_full_path }}" name="wf-form-Side-Contact-Form" data-name="Side Contact Form" style="opacity: 0" data-w-id="36e5b8bc-e8a4-6d50-f2c1-1318b584be60" id="email-form" class="contact-form-block">
             {% csrf_token %}
             <input type="hidden" name="req-type" value="BOOK_APPOINTMENT" />
             <input class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Your name" type="text" id="field" required="" />
@@ -316,8 +318,8 @@
     </div>
   </div>
 
-  {% include "recent_blogs.html" %}
+  {% include 'recent_blogs.html' %}
 
   <a href="#Top" data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031" style="opacity: 0; display: none" class="go-up-button w-inline-block"></a>
-  {% include "instagram.html" %}
+  {% include 'instagram.html' %}
 {% endblock %}

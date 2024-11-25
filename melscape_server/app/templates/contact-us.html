@@ -1,7 +1,9 @@
-{% extends "page_template.html" %}
+{% extends 'page_template.html' %}
 {% load static %}
 {% block heading %}
   <title>Contact us</title>
+  <meta content="Contact Us | MelScape Property Manager" property="og:title" />
+  <meta content="Contact Us | MelScape Property Manager" property="twitter:title" />
   <style>
     .w-webflow-badge {
       display: none !important;
@@ -100,7 +102,7 @@
               <h6>Phone</h6>
               <div>
                 <div>
-                  <a href="tel:{{site_info.phone_number}}" class="contact-link">{{ site_info.phone_number }}</a>
+                  <a href="tel:{{ site_info.phone_number }}" class="contact-link">{{ site_info.phone_number }}</a>
                 </div>
               </div>
             </div>
@@ -108,22 +110,23 @@
         </div>
         <div class="contact-form-right">
           {% if success_message %}
-          <div class="success-message dark w-form-done" style="display: block;">
-            <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg" loading="lazy" width="35" alt="" />
-            <div class="top-margin _15-pixels">
-              <div>Thank you! {{success_message}}</div>
+            <div class="success-message dark w-form-done" style="display: block;">
+              <img src="https://assets.website-files.com/5fb94d66e5e1d8ea7d729c38/5fb94e3b5f4c877ee2cfeaac_formas-y-simbolos.svg" loading="lazy" width="35" alt="" />
+              <div class="top-margin _15-pixels">
+                <div>Thank you! {{ success_message }}</div>
+              </div>
             </div>
-          </div>
           {% endif %}
           {% if error_message %}
-          <div class="error-message w-form-fail" style="display: block;">
-            <div>Oops! {{error_message}}</div>
-          </div>
+            <div class="error-message w-form-fail" style="display: block;">
+              <div>Oops! {{ error_message }}</div>
+            </div>
           {% endif %}
           <h6>Type us your message</h6>
           <div class="form-block-2 w-form">
-            <form data-name="Contact Form" name="wf-form-Contact-Form" id="email-form" method="POST" class="form-flex" action="{% url 'contact' %}">{% csrf_token %}
-              <input type="hidden" name="req-type" value="CONTACT">
+            <form data-name="Contact Form" name="wf-form-Contact-Form" id="email-form" method="POST" class="form-flex" action="{% url 'contact' %}">
+              {% csrf_token %}
+              <input type="hidden" name="req-type" value="CONTACT" />
               <input type="text" class="input w-input" maxlength="256" name="first-name" data-name="Name" placeholder="Your name" id="field" required="required" />
               <input type="text" class="input w-input" maxlength="256" name="last-name" data-name="Last Name" placeholder="Your last name" id="field" required="required" />
               <input type="email" class="input w-input" maxlength="256" name="email" data-name="Email" placeholder="your@email.com" id="field" required="required" />
@@ -137,7 +140,7 @@
     </div>
   </div>
   <a href="#Top" data-w-id="62f0835b-cb3e-0ff2-572c-f1ade8e87031" style="opacity: 0; display: none" class="go-up-button w-inline-block"></a>
-  {% include "instagram.html" %}
+  {% include 'instagram.html' %}
 {% endblock %}
 {% block scripts %}
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>

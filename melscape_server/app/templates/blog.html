@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block heading %}
-  <title>Blog</title>
-
+  <title>Blog | MelScape</title>
+  <meta content="Blog | MelScape Property Manager" property="og:title" />
+  <meta content="Blog | MelScape Property Manager" property="twitter:title" />
   <style>
     .w-webflow-badge {
       display: none !important;
@@ -90,7 +91,7 @@
                             rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                           opacity: 0;
                         " class="on-load-3">
-                    <a href="{% url 'blog_details' featured_blog.slug %}" class="h1-hero-link">{{ featured_blogs.first.heading }}</a>
+                    <a href="{% url 'blog_details' featured_blogs.first.slug %}" class="h1-hero-link">{{ featured_blogs.first.heading }}</a>
                   </div>
                   <div class="top-margin _10-pixels">
                     <div class="_90-percent-box">
@@ -108,7 +109,7 @@
                                 rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                               opacity: 0;
                             " class="on-load-4">
-                        <p class="subtitle white">{{ featured_blogs.first.body|safe|truncatechars:100 }}</p>
+                        <div class="subtitle white">{{ featured_blogs.first.body|safe|truncatechars:100 }}</div>
                       </div>
                     </div>
                   </div>
@@ -186,7 +187,7 @@
                                 rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                               opacity: 0;
                             " class="on-load-4">
-                        <p class="subtitle white">{{ blog_posts.first.body|safe|truncatechars:100 }}</p>
+                        <div class="subtitle white">{{ blog_posts.first.body|safe|truncatechars:100 }}</div>
                       </div>
                     </div>
                   </div>
@@ -290,7 +291,7 @@
                             background-image: url('{{ featured_blog.cover_photo.url }}');" class="hover-image"></div>
                     </a>
                     <div class="featured-text-preview">
-                      <a style="background-color: #e5e2fa; color: #847bd5" href="{% url 'blog_category' blog_post.category.category %}" class="category-lik">{{ featured_blog.category.category }}</a>
+                      <a style="background-color: #e5e2fa; color: #847bd5" href="{% url 'blog_category' featured_blog.category.category %}" class="category-lik">{{ featured_blog.category.category }}</a>
                       <div class="top-margin _15-pixels">
                         <a href="{% url 'blog_details' featured_blog.slug %}" class="title-link">{{ featured_blog.heading }}</a>
                       </div>
