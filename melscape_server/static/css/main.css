@@ -295,10 +295,17 @@ body {
 .booking-platforms {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   font-family: Helvetica, sans-serif;
   color: var(--first-color-dark);
   font-size: 32px;
   text-transform: capitalize;
+}
+
+.booking-platforms > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .booking-platforms a:hover {
