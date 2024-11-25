@@ -300,6 +300,15 @@ body {
   color: var(--first-color-dark);
   font-size: 32px;
   text-transform: capitalize;
+  padding-top: 20px;
+}
+
+.content-section-line.intro_ {
+  padding-bottom: 0px;
+}
+
+.calculator-container.booking {
+  padding-top: 20px;
 }
 
 .booking-platforms > a {
@@ -311,6 +320,23 @@ body {
 
 .booking-platforms a:hover {
   color: var(--second-color);
+}
+
+@media screen and (max-width: 900px) {
+  .booking-platforms {
+    flex-direction: column;
+  }
+
+  .booking-platforms > a {
+    height: 80px;
+    margin-bottom: 15px auto;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .booking-platforms > a img{
+    transform: scale(.8);
+  }
 }
 
 .cta-booking-container {
