@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../MelScapeFrontend"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "MelScapeFrontend"
+	}
+}
