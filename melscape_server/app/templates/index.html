@@ -529,7 +529,7 @@
           <input type="text" class="address-input" placeholder="Enter Property street and number" />
         </div>
         <div class="input-group">
-          <button class="estimate-btn" data-w-id="9b8c5046-c0ca-82df-9168-084d8bf1cf2d">Get Estimate</button>
+          <button class="estimate-btn">Get Estimate</button>
         </div>
       </div>
     </div>
@@ -574,11 +574,9 @@
       estimateBtn.addEventListener('click', () => {
         if (!addressInput.value.trim()) {
           alert('Please enter a property address')
-          return
+        }else{
+          document.querySelector("#modal-activator").click()
         }
-    
-        // Here you would typically make an API call or perform calculations
-        alert(`Calculating estimate for ${currentCount} bedroom property at: ${addressInput.value}`)
       })
     })
   </script>
